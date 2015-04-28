@@ -44,3 +44,4 @@ Temporary Items
 
 # SUO File should be ignored
 .suo
+*.suo
