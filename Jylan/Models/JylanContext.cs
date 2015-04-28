@@ -16,5 +16,6 @@ namespace Jylan.Models
         }
 
         public DbSet<Signup> Signups { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }

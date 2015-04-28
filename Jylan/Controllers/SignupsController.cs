@@ -121,6 +121,9 @@ namespace Jylan.Controllers
         // Custom control for custom view
         public ActionResult SignupComplete(Signup signup)
         {
+            var currentEvent = db.Events.ToList().LastOrDefault();
+            ViewBag.EventPrice = 0;
+            if (currentEvent != null) ViewBag.EventPrice = currentEvent.Price;
             return View(signup);
         }
 

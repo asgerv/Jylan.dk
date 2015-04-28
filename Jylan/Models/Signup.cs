@@ -10,6 +10,7 @@ namespace Jylan.Models
         [Display(Name = "Email Adresse")]
         [DataType(DataType.EmailAddress)]
         public string EmailAddress { get; set; }
+
         [Display(Name = "Nickname")]
         public string Nick { get; set; }
 

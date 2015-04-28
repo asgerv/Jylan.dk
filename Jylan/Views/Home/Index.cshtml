@@ -1,38 +1,50 @@
-﻿@model IEnumerable<Jylan.Models.Signup>
+﻿@using Jylan.Models
+@model Jylan.Models.LandingPageViewModel
+@{
+    // This is shit.
+    Jylan.Models.Signup signupModel = new Signup();
+}
 @{
     ViewBag.Title = "Forside";
 }
 <div class="jumbotron">
     <h1>JYLAN</h1>
     <p class="lead">Her kan du tilmelde dig, og finde information om det næste JYLAN</p>
+    @* TODO: Countdown *@
     <p class="lead">Tid til næste LAN: </p>
 </div>
 <div class="row">
-    <div class="col-md-3">
-        <h2>Information</h2>
+    <div class="col-md-4">
+        <h2>@Model.Name</h2>
         <table style="width: 100%;">
             <tr>
-                <td>Tilmeldte:</td>
+                <td><strong>Tilmeldte:</strong></td>
                 <td style="text-align: right;">
-                    <span>@Model.Count()</span>
+                    <span>@Model.Signups.Count()</span>
                     /
-                    <span>100</span>
+                    <span>@Model.MaxSignups</span>
                 </td>
             </tr>
             <tr>
-                <td>Start tidspunkt:</td>
+                <td><strong>Pris:</strong></td>
                 <td style="text-align: right;">
-                    <span>22-05-1337</span>
+                    <span>@Model.Price kr.</span>
                 </td>
             </tr>
             <tr>
-                <td>Slut tidspunkt:</td>
+                <td><strong>Start tidspunkt:</strong></td>
                 <td style="text-align: right;">
-                    <span>25-05-1337</span>
+                    <span>@Html.DisplayFor(model => model.StartDateTime)</span>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Slut tidspunkt:</strong></td>
+                <td style="text-align: right;">
+                    <span>@Html.DisplayFor(model => model.EndDateTime)</span>
                 </td>
             </tr>
         </table>
-        <br />
+        <br/>
         <a href="@Url.Action("Create", "Signups")" class="btn btn-info btn-lg">Tilmeld dig her &raquo;</a>
     </div>
     <div class="col-md-8">
@@ -40,21 +52,21 @@
         <table class="table">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.FirstName)
+                    @Html.DisplayNameFor(model => signupModel.FirstName)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.LastName)
+                    @Html.DisplayNameFor(model => signupModel.LastName)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Nick)
+                    @Html.DisplayNameFor(model => signupModel.Nick)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.HasPayed)
+                    @Html.DisplayNameFor(model => signupModel.HasPayed)
                 </th>
                 <th></th>
             </tr>
 
-            @foreach (var item in Model)
+            @foreach (var item in Model.Signups)
             {
                 <tr>
                     <td>
