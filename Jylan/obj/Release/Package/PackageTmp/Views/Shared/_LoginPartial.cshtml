@@ -1,19 +1,31 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new {id = "logoutForm", @class = "navbar-right"}))
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Administrér tilmeldte", "Index", "Signups")
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Administrer
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Tilmeldinger", "Index", "Signups")</li>
+                    <li>@Html.ActionLink("Begivenhed", "Index", "Signups")</li>
+                    <li>@Html.ActionLink("Information", "Index", "Signups")</li>
+                </ul>
             </li>
             <li>
-                @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", null, new {title = "Manage"})
-            </li>
-            <li>
-                <a href="javascript:document.getElementById('logoutForm').submit()">Log ud</a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    @User.Identity.GetUserName()
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Konto", "Index", "Manage")</li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log ud</a></li>                 
+                </ul>
             </li>
         </ul>
     }
@@ -21,7 +33,6 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
-        <li>@Html.ActionLink("Admin", "Login", "Account", null, new {id = "loginLink"})</li>
+        <li>@Html.ActionLink("Admin", "Login", "Account", null, new { id = "loginLink" })</li>
     </ul>
 }
