@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Jylan.Models.Signup>
+@{
+    ViewBag.Title = "Forside";
+}
+<div class="jumbotron">
+    <h1>JYLAN</h1>
+    <p class="lead">Her kan du tilmelde dig, og finde information om det næste JYLAN</p>
+    <p class="lead">Tid til næste LAN: </p>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <h2>Information</h2>
+        <table style="width: 100%;">
+            <tr>
+                <td>Tilmeldte:</td>
+                <td style="text-align: right;">
+                    <span>@Model.Count()</span>
+                    /
+                    <span>100</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Start tidspunkt:</td>
+                <td style="text-align: right;">
+                    <span>22-05-1337</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Slut tidspunkt:</td>
+                <td style="text-align: right;">
+                    <span>25-05-1337</span>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <a href="@Url.Action("Create", "Signups")" class="btn btn-info btn-lg">Tilmeld dig her &raquo;</a>
+    </div>
+    <div class="col-md-8">
+        <h2>Tilmeldte </h2>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nick)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HasPayed)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nick)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HasPayed)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+Jumbotron
+background-image: url("../Content/Images/jumbotron_jylland.png");
+    background-size: cover;
