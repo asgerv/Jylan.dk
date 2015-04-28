@@ -4,7 +4,7 @@
     // make use of nullable class attribute values
     var yesSelected = Model.HasValue && Model.Value ? "active" : null;
     var noSelected = (Model.HasValue && !Model.Value)
-        || (!Model.HasValue && ViewData.ModelMetadata.IsNullableValueType)
+                     || (!Model.HasValue && ViewData.ModelMetadata.IsNullableValueType)
         ? "active"
         : null;
     var noSelection = !Model.HasValue ? "active" : null;
@@ -17,16 +17,16 @@
 
 <div class="btn-group" data-toggle="buttons">
     <label class="btn btn-info @yesSelected">
-        <input type="radio" class="bool-@htmlField" onchange="javascript:$('#@htmlField').val(true);" /> Ja
+        <input type="radio" class="bool-@htmlField" onchange=" javascript:$('#@htmlField').val(true); "/> Ja
     </label>
     <label class="btn btn-info @noSelected">
-        <input type="radio" class="bool-@htmlField" onchange="javascript:$('#@htmlField').val(false);" /> Nej
+        <input type="radio" class="bool-@htmlField" onchange=" javascript:$('#@htmlField').val(false); "/> Nej
     </label>
 
     @if (ViewData.ModelMetadata.IsNullableValueType)
     {
         <label class="btn btn-info @noSelection">
-            <input type="radio" class="bool-@htmlField" onclick="javascript:$('#@htmlField').val('');" />Do Not Set
+            <input type="radio" class="bool-@htmlField" onclick=" javascript:$('#@htmlField').val(''); "/>Do Not Set
         </label>
     }
 </div>

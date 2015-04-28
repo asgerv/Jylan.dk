@@ -1,20 +1,19 @@
+using System.Data.Entity.Migrations;
+using Jylan.Models;
+using MySql.Data.Entity;
+
 namespace Jylan.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<Jylan.Models.JylanContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<JylanContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
             ContextKey = "Jylan.Models.JylanContext";
-            SetSqlGenerator("MySql.Data.MySqlClient", new MySql.Data.Entity.MySqlMigrationSqlGenerator());
+            SetSqlGenerator("MySql.Data.MySqlClient", new MySqlMigrationSqlGenerator());
         }
 
-        protected override void Seed(Jylan.Models.JylanContext context)
+        protected override void Seed(JylanContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Jylan.Models;
 
@@ -12,22 +8,45 @@ namespace Jylan.Controllers
 {
     public class EventsController : Controller
     {
-        private JylanContext db = new JylanContext();
-
+        private readonly JylanContext db = new JylanContext();
         // GET: Events
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
-            return View(db.Events.ToList());
+            var @event = db.Events.ToList().LastOrDefault();
+            if (@event == null)
+            {
+                // There should only be one Event.
+                // TODO: Create new empty Event if there is none.
+                return HttpNotFound();
+            }
+            return View(@event);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public ActionResult Index(
+            [Bind(Include = "EventId,Name,StartDateTime,EndDateTime,Price,MaxSignups")] Event @event)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(@event).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(@event);
         }
 
         // GET: Events/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
+            var @event = db.Events.Find(id);
             if (@event == null)
             {
                 return HttpNotFound();
@@ -36,6 +55,7 @@ namespace Jylan.Controllers
         }
 
         // GET: Events/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -46,7 +66,9 @@ namespace Jylan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventId,Name,StartDateTime,EndDateTime,Price,MaxSignups")] Event @event)
+        [Authorize(Roles = "Admin")]
+        public ActionResult Create(
+            [Bind(Include = "EventId,Name,StartDateTime,EndDateTime,Price,MaxSignups")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -59,13 +81,14 @@ namespace Jylan.Controllers
         }
 
         // GET: Events/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
+            var @event = db.Events.Find(id);
             if (@event == null)
             {
                 return HttpNotFound();
@@ -78,7 +101,9 @@ namespace Jylan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EventId,Name,StartDateTime,EndDateTime,Price,MaxSignups")] Event @event)
+        [Authorize(Roles = "Admin")]
+        public ActionResult Edit(
+            [Bind(Include = "EventId,Name,StartDateTime,EndDateTime,Price,MaxSignups")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -90,13 +115,14 @@ namespace Jylan.Controllers
         }
 
         // GET: Events/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Event @event = db.Events.Find(id);
+            var @event = db.Events.Find(id);
             if (@event == null)
             {
                 return HttpNotFound();
@@ -107,9 +133,10 @@ namespace Jylan.Controllers
         // POST: Events/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Event @event = db.Events.Find(id);
+            var @event = db.Events.Find(id);
             db.Events.Remove(@event);
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
+using Jylan.Extensions;
 using Jylan.Models;
 
 namespace Jylan.Controllers
@@ -9,9 +9,12 @@ namespace Jylan.Controllers
     {
         // Måske ikke helt optimalt.
         private readonly JylanContext db = new JylanContext();
+
         public ActionResult Index()
         {
-            return View(db.Signups.ToList());
+            var landingPageViewModel = db.Signups.ToLandingPageViewModel(db.Events.ToList().LastOrDefault());
+
+            return View(landingPageViewModel);
         }
 
         public ActionResult About()

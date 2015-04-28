@@ -1,8 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace Jylan.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class events : DbMigration
     {
         public override void Up()
@@ -10,18 +9,17 @@ namespace Jylan.Migrations
             CreateTable(
                 "dbo.Events",
                 c => new
-                    {
-                        EventId = c.Int(nullable: false, identity: true),
-                        Name = c.String(unicode: false),
-                        StartDateTime = c.DateTime(nullable: false, precision: 0),
-                        EndDateTime = c.DateTime(nullable: false, precision: 0),
-                        Price = c.Int(nullable: false),
-                        MaxSignups = c.Int(nullable: false),
-                    })
+                {
+                    EventId = c.Int(false, true),
+                    Name = c.String(unicode: false),
+                    StartDateTime = c.DateTime(false, 0),
+                    EndDateTime = c.DateTime(false, 0),
+                    Price = c.Int(false),
+                    MaxSignups = c.Int(false)
+                })
                 .PrimaryKey(t => t.EventId);
-            
         }
-        
+
         public override void Down()
         {
             DropTable("dbo.Events");
