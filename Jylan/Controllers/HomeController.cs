@@ -19,15 +19,14 @@ namespace Jylan.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+            var currentEvent = db.Events.ToList().LastOrDefault();
+            ViewBag.EventPrice = 0;
+            if (currentEvent != null) ViewBag.EventPrice = currentEvent.Price;
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
