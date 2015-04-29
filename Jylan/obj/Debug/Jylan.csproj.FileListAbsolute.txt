@@ -177,12 +177,11 @@ D:\Source\Repos\Jylan.dk\Jylan\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Source\Repos\Jylan.dk\Jylan\bin\Microsoft.Owin.Security.Google.xml
 D:\Source\Repos\Jylan.dk\Jylan\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Source\Repos\Jylan.dk\Jylan\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.csprojResolveAssemblyReference.cache
 D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.Migrations.InitialCreate.resources
 D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.Migrations.nickname.resources
 D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.Migrations.mysql.resources
+D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.Migrations.events.resources
+D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.Migrations.eventsmodelupdate.resources
 D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.csproj.GenerateResource.Cache
 D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.dll
 D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.pdb
-D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.Migrations.events.resources
-D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.Migrations.eventsmodelupdate.resources
