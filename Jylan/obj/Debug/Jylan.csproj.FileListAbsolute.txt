@@ -185,3 +185,4 @@ D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.Migrations.eventsmodelupdate.reso
 D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.csproj.GenerateResource.Cache
 D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.dll
 D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.pdb
+D:\Source\Repos\Jylan.dk\Jylan\obj\Debug\Jylan.csprojResolveAssemblyReference.cache
