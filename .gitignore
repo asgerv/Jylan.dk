@@ -45,8 +45,3 @@ Temporary Items
 # SUO File should be ignored
 .suo
 *.suo
-
-# config security
-Web.config
-Web.Debug.config
-Web.Release.config
