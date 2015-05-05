@@ -242,10 +242,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>04/29/2015 13:43:49</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/05/2015 12:09:47</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -290,7 +290,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/_PaymentPartial.cshtml">
-      <publishTime>04/29/2015 13:43:49</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Signups/Create.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -308,7 +308,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Signups/SignupComplete.cshtml">
-      <publishTime>04/29/2015 13:43:49</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>01/01/0001 00:00:00</publishTime>
