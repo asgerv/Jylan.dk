@@ -219,7 +219,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\calendar.png" />
     <Content Include="Content\Images\jumbotron_jylland.png" />
     <Content Include="Content\Images\jylland.png" />
     <Content Include="Content\themes\base\accordion.css" />
