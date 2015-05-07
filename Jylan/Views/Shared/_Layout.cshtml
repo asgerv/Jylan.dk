@@ -1,46 +1,62 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - JYLAN</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/css")
     @Scripts.Render("~/bundles/modernizr")
-    <meta name="description" content="JYLAN - JYSK LAN PARTY"/>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryui")
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="../../Scripts/jquery-2.1.3.js"></script>
+    <script src="../../Scripts/jquery-ui-1.11.4.js"></script>
+    <script>
+        $(function () {
+            $(".datepick").datepicker({
+                showWeek: true,
+                firstDay: 1,
+                monthNames: ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"],
+                dateFormat: "dd-mm-yy",
+                changeYear: true
+            });
+        });
+    </script>
+    <meta name="description" content="JYLAN - JYSK LAN PARTY" />
     <link href="../../Content/zocial.css" rel="stylesheet">
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            @Html.ActionLink("JYLAN", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Forside", "Index", "Home")</li>
-                <li>@Html.ActionLink("Information", "About", "Home")</li>
-                <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
-            </ul>
-            @Html.Partial("_LoginPartial")
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("JYLAN", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Forside", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Information", "About", "Home")</li>
+                    <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
         </div>
     </div>
-</div>
-<div class="container body-content">
-    @RenderBody()
-    <hr/>
-    <footer style="bottom: 0; position: fixed;">
-        <p>
-            &copy; @DateTime.Now.Year - <a href="mailto:asgerv@gmail.com" target="_top">Asger Vestbjerg</a>
-        </p>
-    </footer>
-</div>
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
-@RenderSection("scripts", false)
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer style="bottom: 0; position: fixed;">
+            <p>
+                &copy; @DateTime.Now.Year - <a href="mailto:asgerv@gmail.com" target="_top">Asger Vestbjerg</a>
+            </p>
+        </footer>
+    </div>
+    @RenderSection("scripts", false)
 </body>
 </html>

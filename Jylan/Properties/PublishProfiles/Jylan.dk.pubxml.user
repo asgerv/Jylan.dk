@@ -272,7 +272,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/DisplayTemplates/DateTimeText.cshtml">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/05/2015 16:12:46</publishTime>
     </File>
     <File Include="Views/Shared/EditorTemplates/BooleanButtonLabel.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>

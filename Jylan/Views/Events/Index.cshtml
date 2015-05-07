@@ -1,9 +1,9 @@
 ﻿@model Jylan.Models.Event
 
 @{
-    ViewBag.Title = "Begivenheder";
+    ViewBag.Title = "Begivenhed";
+    
 }
-
 <h2>Begivenhed</h2>
 <p>
     @Html.ActionLink("Opdater fra database", "Index")
@@ -25,19 +25,19 @@
                 @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
             </div>
         </div>
-
+        
         <div class="form-group">
-            @Html.LabelFor(model => model.StartDateTime, new {@class = "control-label col-md-2"})
+            @Html.LabelFor(model => model.StartDateTime, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StartDateTime, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.StartDateTime, "", new {@class = "text-danger"})
+                @Html.EditorFor(model => model.StartDateTime)
+                @Html.ValidationMessageFor(model => model.StartDateTime, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.EndDateTime, new {@class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EndDateTime, new {htmlAttributes = new {@class = "form-control"}})
+                @Html.EditorFor(model => model.EndDateTime)
                 @Html.ValidationMessageFor(model => model.EndDateTime, "", new {@class = "text-danger"})
             </div>
         </div>
