@@ -14,7 +14,7 @@
     <p class="lead">Tid til næste LAN: </p>
 </div>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <h2>@Model.Name</h2>
         <table style="width: 100%;">
             <tr>
@@ -47,42 +47,44 @@
         <br/>
         <a href="@Url.Action("Create", "Signups")" class="btn btn-info btn-lg">Tilmeld dig her &raquo;</a>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-9">
         <h2>Tilmeldte </h2>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => signupModel.FirstName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => signupModel.LastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => signupModel.Nick)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => signupModel.HasPayed)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model.Signups)
-            {
+        <div class="table-responsive">
+            <table class="table">
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FirstName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.LastName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nick)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.HasPayed)
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => signupModel.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => signupModel.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => signupModel.Nick)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => signupModel.HasPayed)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </table>
+
+                @foreach (var item in Model.Signups)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nick)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HasPayed)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
     </div>
 </div>

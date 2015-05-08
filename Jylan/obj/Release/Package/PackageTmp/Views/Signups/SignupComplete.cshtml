@@ -14,18 +14,7 @@
         <strong>Pris: </strong>@ViewBag.EventPrice kr<br/>
         <strong>HUSK: </strong>Skriv din email som besked, så vi kan se det er dig, der har betalt.
     </p>
-    <div class="panel panel-default" style="width: 70%">
-        <div class="text-info">
-            <b>MobilePay</b><br/> 88 88 88 88
-        </div>
-    </div>
-    <div class="panel panel-default" style="width: 70%">
-        <div class="text-info">
-            <b>Bankoverførsel</b><br/>
-            Reg: 1337<br/>
-            Kontonr: 123456789
-        </div>
-    </div>
+    @Html.Partial("_PaymentPartial")
     <h3>Dine informationer:</h3>
     <hr/>
     <dl class="dl-horizontal">
