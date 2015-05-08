@@ -11,16 +11,19 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryui")
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../../Content/jquery-ui-timepicker-addon.css">
     <script src="../../Scripts/jquery-2.1.3.js"></script>
     <script src="../../Scripts/jquery-ui-1.11.4.js"></script>
+    <script src="../../Scripts/jquery-ui-timepicker-addon.js"></script>
     <script>
         $(function () {
-            $(".datepick").datepicker({
+            $(".datepick").datetimepicker({
                 showWeek: true,
                 firstDay: 1,
                 monthNames: ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"],
                 dateFormat: "dd-mm-yy",
-                changeYear: true
+                changeYear: true,
+                showSecond: true
             });
         });
     </script>
