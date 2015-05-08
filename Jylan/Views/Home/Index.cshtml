@@ -10,8 +10,10 @@
 <div class="jumbotron">
     <h1>JYLAN</h1>
     <p class="lead">Her kan du tilmelde dig, og finde information om det næste JYLAN</p>
-    @* TODO: Countdown *@
-    <p class="lead">Tid til næste LAN: </p>
+    <p class="lead">
+        Tid til næste LAN:
+        <div id="getting-started"></div>
+    </p>
 </div>
 <div class="row">
     <div class="col-md-3">
@@ -44,7 +46,7 @@
                 </td>
             </tr>
         </table>
-        <br/>
+        <br />
         <a href="@Url.Action("Create", "Signups")" class="btn btn-info btn-lg">Tilmeld dig her &raquo;</a>
     </div>
     <div class="col-md-9">
