@@ -27,6 +27,20 @@ namespace Jylan
                 "~/Content/site.css",
                 "~/Content/zocial.css"
                 ));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                "~/Scripts/jquery-2.1.3.js",
+                "~/Scripts/jquery-ui-1.11.4.js",
+                "~/Scripts/jquery-ui-timepicker-addon.js",
+                "~/Scripts/jquery.countdown.js"
+                ));
+            bundles.Add(new StyleBundle("~/Content/jqueryui").Include(
+                "~/Content/themes/base/jquery-ui.css",
+                "~/Content/jquery-ui-timepicker-addon.css"
+                ));
+            // Add my own custom scripts
+            bundles.Add(new ScriptBundle("~/bundles/myscripts").Include(
+                "~/Scripts/myscripts.js"
+                ));
         }
     }
 }

@@ -12,9 +12,14 @@
     <p class="lead">Her kan du tilmelde dig, og finde information om det næste JYLAN</p>
     <p class="lead">
         Tid til næste LAN:
-        <div id="getting-started"></div>
+        <div id="counter"></div>
     </p>
 </div>
+@{
+    var timeSpanLeft = @Model.StartDateTime - DateTime.Now;
+}
+<input id="lolx" type="hidden" value="@timeSpanLeft" />
+
 <div class="row">
     <div class="col-md-3">
         <h2>@Model.Name</h2>
@@ -34,13 +39,13 @@
                 </td>
             </tr>
             <tr>
-                <td><strong>Start tidspunkt:</strong></td>
+                <td><strong>Start:</strong></td>
                 <td style="text-align: right;">
                     <span>@Html.DisplayFor(model => model.StartDateTime)</span>
                 </td>
             </tr>
             <tr>
-                <td><strong>Slut tidspunkt:</strong></td>
+                <td><strong>Slut:</strong></td>
                 <td style="text-align: right;">
                     <span>@Html.DisplayFor(model => model.EndDateTime)</span>
                 </td>

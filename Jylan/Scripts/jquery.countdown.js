@@ -1,206 +1,106 @@
-/*!
- * The Final Countdown for jQuery v2.0.4 (http://hilios.github.io/jQuery.countdown/)
- * Copyright (c) 2014 Edson Hilios
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy of
- * this software and associated documentation files (the "Software"), to deal in
- * the Software without restriction, including without limitation the rights to
- * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
- * the Software, and to permit persons to whom the Software is furnished to do so,
- * subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
- * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
- * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
-(function(factory) {
-    "use strict";
-    if (typeof define === "function" && define.amd) {
-        define([ "jquery" ], factory);
-    } else {
-        factory(jQuery);
-    }
-})(function($) {
-    "use strict";
-    var PRECISION = 100;
-    var instances = [], matchers = [];
-    matchers.push(/^[0-9]*$/.source);
-    matchers.push(/([0-9]{1,2}\/){2}[0-9]{4}( [0-9]{1,2}(:[0-9]{2}){2})?/.source);
-    matchers.push(/[0-9]{4}([\/\-][0-9]{1,2}){2}( [0-9]{1,2}(:[0-9]{2}){2})?/.source);
-    matchers = new RegExp(matchers.join("|"));
-    function parseDateString(dateString) {
-        if (dateString instanceof Date) {
-            return dateString;
-        }
-        if (String(dateString).match(matchers)) {
-            if (String(dateString).match(/^[0-9]*$/)) {
-                dateString = Number(dateString);
-            }
-            if (String(dateString).match(/\-/)) {
-                dateString = String(dateString).replace(/\-/g, "/");
-            }
-            return new Date(dateString);
-        } else {
-            throw new Error("Couldn't cast `" + dateString + "` to a date object.");
-        }
-    }
-    var DIRECTIVE_KEY_MAP = {
-        Y: "years",
-        m: "months",
-        w: "weeks",
-        d: "days",
-        D: "totalDays",
-        H: "hours",
-        M: "minutes",
-        S: "seconds"
+﻿/*
+* jquery-counter plugin
+*
+* Copyright (c) 2009 Martin Conte Mac Donell <Reflejo@gmail.com>
+* Dual licensed under the MIT and GPL licenses.
+* http://docs.jquery.com/License
+*/
+jQuery.fn.countdown = function(userOptions) {
+    // Default options
+    var options = {
+        stepTime: 60,
+        // startTime and format MUST follow the same format.
+        // also you cannot specify a format unordered (e.g. hh:ss:mm is wrong)
+        format: "dd:hh:mm:ss",
+        startTime: "01:12:32:55",
+        digitImages: 6,
+        digitWidth: 53,
+        digitHeight: 77,
+        timerEnd: function() { },
+        image: "digits.png"
     };
-    function strftime(offsetObject) {
-        return function(format) {
-            var directives = format.match(/%(-|!)?[A-Z]{1}(:[^;]+;)?/gi);
-            if (directives) {
-                for (var i = 0, len = directives.length; i < len; ++i) {
-                    var directive = directives[i].match(/%(-|!)?([a-zA-Z]{1})(:[^;]+;)?/), regexp = new RegExp(directive[0]), modifier = directive[1] || "", plural = directive[3] || "", value = null;
-                    directive = directive[2];
-                    if (DIRECTIVE_KEY_MAP.hasOwnProperty(directive)) {
-                        value = DIRECTIVE_KEY_MAP[directive];
-                        value = Number(offsetObject[value]);
-                    }
-                    if (value !== null) {
-                        if (modifier === "!") {
-                            value = pluralize(plural, value);
-                        }
-                        if (modifier === "") {
-                            if (value < 10) {
-                                value = "0" + value.toString();
-                            }
-                        }
-                        format = format.replace(regexp, value.toString());
-                    }
+    var digits = [], interval;
+
+    // Draw digits in given container
+    var createDigits = function(where) {
+        var c = 0;
+        // Iterate each startTime digit, if it is not a digit
+        // we'll asume that it's a separator
+        for (var i = 0; i < options.startTime.length; i++) {
+            if (parseInt(options.startTime[i]) >= 0) {
+                elem = $('<div id="cnt_' + i + '" class="cntDigit" />').css({
+                    height: options.digitHeight * options.digitImages * 10,
+                    float: 'left', background: 'url(\'' + options.image + '\')',
+                    width: options.digitWidth
+                });
+                digits.push(elem);
+                margin(c, -((parseInt(options.startTime[i]) * options.digitHeight *
+                              options.digitImages)));
+                digits[c].__max = 9;
+                // Add max digits, for example, first digit of minutes (mm) has 
+                // a max of 5. Conditional max is used when the left digit has reach
+                // the max. For example second "hours" digit has a conditional max of 4 
+                switch (options.format[i]) {
+                    case 'h':
+                        digits[c].__max = (c % 2 == 0) ? 2 : 9;
+                        if (c % 2 == 0)
+                            digits[c].__condmax = 4;
+                        break;
+                    case 'd':
+                        digits[c].__max = 9;
+                        break;
+                    case 'm':
+                    case 's':
+                        digits[c].__max = (c % 2 == 0) ? 5 : 9;
                 }
+                ++c;
             }
-            format = format.replace(/%%/, "%");
-            return format;
-        };
-    }
-    function pluralize(format, count) {
-        var plural = "s", singular = "";
-        if (format) {
-            format = format.replace(/(:|;|\s)/gi, "").split(/\,/);
-            if (format.length === 1) {
-                plural = format[0];
-            } else {
-                singular = format[0];
-                plural = format[1];
-            }
+            else
+                elem = $('<div class="cntSeparator"/>').css({ float: 'left' })
+                .text(options.startTime[i]);
+
+            where.append(elem)
         }
-        if (Math.abs(count) === 1) {
-            return singular;
-        } else {
-            return plural;
-        }
-    }
-    var Countdown = function(el, finalDate, callback) {
-        this.el = el;
-        this.$el = $(el);
-        this.interval = null;
-        this.offset = {};
-        this.instanceNumber = instances.length;
-        instances.push(this);
-        this.$el.data("countdown-instance", this.instanceNumber);
-        if (callback) {
-            this.$el.on("update.countdown", callback);
-            this.$el.on("stoped.countdown", callback);
-            this.$el.on("finish.countdown", callback);
-        }
-        this.setFinalDate(finalDate);
-        this.start();
     };
-    $.extend(Countdown.prototype, {
-        start: function() {
-            if (this.interval !== null) {
-                clearInterval(this.interval);
-            }
-            var self = this;
-            this.update();
-            this.interval = setInterval(function() {
-                self.update.call(self);
-            }, PRECISION);
-        },
-        stop: function() {
-            clearInterval(this.interval);
-            this.interval = null;
-            this.dispatchEvent("stoped");
-        },
-        pause: function() {
-            this.stop.call(this);
-        },
-        resume: function() {
-            this.start.call(this);
-        },
-        remove: function() {
-            this.stop();
-            instances[this.instanceNumber] = null;
-            delete this.$el.data().countdownInstance;
-        },
-        setFinalDate: function(value) {
-            this.finalDate = parseDateString(value);
-        },
-        update: function() {
-            if (this.$el.closest("html").length === 0) {
-                this.remove();
+
+    // Set or get element margin
+    var margin = function(elem, val) {
+        if (val !== undefined)
+            return digits[elem].css({ 'marginTop': val + 'px' });
+
+        return parseInt(digits[elem].css('marginTop').replace('px', ''));
+    };
+
+    // Makes the movement. This is done by "digitImages" steps.
+    var moveStep = function(elem) {
+        digits[elem]._digitInitial = -(digits[elem].__max * options.digitHeight * options.digitImages);
+        return function _move() {
+            mtop = margin(elem) + options.digitHeight;
+            if (mtop == options.digitHeight) {
+                margin(elem, digits[elem]._digitInitial);
+                if (elem > 0) moveStep(elem - 1)();
+                else {
+                    clearInterval(interval);
+                    for (var i = 0; i < digits.length; i++) margin(i, 0);
+                    options.timerEnd();
+                    return;
+                }
+                if ((elem > 0) && (digits[elem].__condmax !== undefined) &&
+            (digits[elem - 1]._digitInitial == margin(elem - 1)))
+                    margin(elem, -(digits[elem].__condmax * options.digitHeight * options.digitImages));
                 return;
             }
-            this.totalSecsLeft = this.finalDate.getTime() - new Date().getTime();
-            this.totalSecsLeft = Math.ceil(this.totalSecsLeft / 1e3);
-            this.totalSecsLeft = this.totalSecsLeft < 0 ? 0 : this.totalSecsLeft;
-            this.offset = {
-                seconds: this.totalSecsLeft % 60,
-                minutes: Math.floor(this.totalSecsLeft / 60) % 60,
-                hours: Math.floor(this.totalSecsLeft / 60 / 60) % 24,
-                days: Math.floor(this.totalSecsLeft / 60 / 60 / 24) % 7,
-                totalDays: Math.floor(this.totalSecsLeft / 60 / 60 / 24),
-                weeks: Math.floor(this.totalSecsLeft / 60 / 60 / 24 / 7),
-                months: Math.floor(this.totalSecsLeft / 60 / 60 / 24 / 30),
-                years: Math.floor(this.totalSecsLeft / 60 / 60 / 24 / 365)
-            };
-            if (this.totalSecsLeft === 0) {
-                this.stop();
-                this.dispatchEvent("finish");
-            } else {
-                this.dispatchEvent("update");
-            }
-        },
-        dispatchEvent: function(eventName) {
-            var event = $.Event(eventName + ".countdown");
-            event.finalDate = this.finalDate;
-            event.offset = $.extend({}, this.offset);
-            event.strftime = strftime(this.offset);
-            this.$el.trigger(event);
+
+            margin(elem, mtop);
+            if (margin(elem) / options.digitHeight % options.digitImages != 0)
+                setTimeout(_move, options.stepTime);
+
+            if (mtop == 0) digits[elem].__ismax = true;
         }
-    });
-    $.fn.countdown = function() {
-        var argumentsArray = Array.prototype.slice.call(arguments, 0);
-        return this.each(function() {
-            var instanceNumber = $(this).data("countdown-instance");
-            if (instanceNumber !== undefined) {
-                var instance = instances[instanceNumber], method = argumentsArray[0];
-                if (Countdown.prototype.hasOwnProperty(method)) {
-                    instance[method].apply(instance, argumentsArray.slice(1));
-                } else if (String(method).match(/^[$A-Z_][0-9A-Z_$]*$/i) === null) {
-                    instance.setFinalDate.call(instance, method);
-                    instance.start();
-                } else {
-                    $.error("Method %s does not exist on jQuery.countdown".replace(/\%s/gi, method));
-                }
-            } else {
-                new Countdown(this, argumentsArray[0], argumentsArray[1]);
-            }
-        });
     };
-});
+
+    $.extend(options, userOptions);
+    this.css({ height: options.digitHeight, overflow: 'hidden' });
+    createDigits(this);
+    interval = setInterval(moveStep(digits.length - 1), 1000);
+};
