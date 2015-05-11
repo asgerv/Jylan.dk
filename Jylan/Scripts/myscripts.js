@@ -1,4 +1,4 @@
-﻿// Customized scripts to
+﻿// Customized scripts
 // EDITED BY: ASGERV
 
 $(function () {
@@ -12,9 +12,10 @@ $(function () {
 });
 
 $(document).ready(function () {
-    var time = $("#lolx").val();
+    var time = $("#timeleft").val();
     $("#counter").countdown({
         startTime: time,
+        format: 'hh:mm:ss',
         image: '/Content/Images/digits.png'
     });
 });
