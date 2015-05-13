@@ -19,3 +19,24 @@ $(document).ready(function () {
         image: '/Content/Images/digits.png'
     });
 });
+
+$(document).ready(function () {
+    initialize();
+});
+
+function initialize() {
+    var mapOptions = {
+        center: new google.maps.LatLng(55.409856, 8.973934),
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        mapOptions);
+    // create a marker
+    var latlng = new google.maps.LatLng(55.409856, 8.973934);
+    var marker = new google.maps.Marker({
+        position: latlng,
+        map: map,
+        title: "JYLAN @@ Lintrup Aktivitetscenter"
+    });
+}

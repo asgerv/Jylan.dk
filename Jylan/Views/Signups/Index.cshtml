@@ -10,7 +10,7 @@
     @Html.ActionLink("Opret ny", "Create")
 </p>
 <div class="table-responsive">
-    <table class="table">
+    <table class="table table-bordered table-striped">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.EmailAddress)
@@ -30,7 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.HasPayed)
             </th>
-            <th></th>
+            <th>
+                Kontrol
+            </th>
         </tr>
 
         @foreach (var item in Model)

@@ -446,7 +446,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/myscripts.js">
-      <publishTime>11/05/2015 15:55:05</publishTime>
+      <publishTime>05/13/2015 16:28:31</publishTime>
     </File>
     <File Include="Scripts/respond.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -509,10 +509,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2015 13:11:02</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>05/13/2015 14:53:05</publishTime>
+      <publishTime>05/13/2015 16:30:57</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
-      <publishTime>05/13/2015 11:56:14</publishTime>
+      <publishTime>05/13/2015 15:26:31</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>05/13/2015 14:36:02</publishTime>
@@ -554,7 +554,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/13/2015 14:45:38</publishTime>
+      <publishTime>05/13/2015 16:29:34</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>08/05/2015 13:11:02</publishTime>
@@ -575,7 +575,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Signups/Index.cshtml">
-      <publishTime>08/05/2015 13:11:02</publishTime>
+      <publishTime>05/13/2015 15:14:04</publishTime>
     </File>
     <File Include="Views/Signups/SignupComplete.cshtml">
       <publishTime>05/13/2015 11:51:22</publishTime>
