@@ -1,7 +1,7 @@
 ﻿// Customized scripts
 // EDITED BY: ASGERV
 
-$(function () {
+$(function() {
     $(".datepick").datetimepicker({
         showWeek: true,
         firstDay: 1,
@@ -11,16 +11,16 @@ $(function () {
     });
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
     var time = $("#timeleft").val();
     $("#counter").countdown({
         startTime: time,
-        format: 'hh:mm:ss',
-        image: '/Content/Images/digits.png'
+        format: "hh:mm:ss",
+        image: "/Content/Images/digits.png"
     });
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
     initialize();
 });
 

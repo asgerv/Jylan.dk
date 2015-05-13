@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
 using System.Web.Mvc;
 using Jylan.Models;
 
@@ -54,9 +55,9 @@ namespace Jylan.Controllers
 
                 var currentEvent = db.Events.ToList().LastOrDefault();
 
-                SmtpClient client = new SmtpClient();
-                MailMessage mailMessage = new MailMessage();
-                mailMessage.From = new MailAddress("noreply@jylan.dk", "JYLAN", System.Text.Encoding.UTF8);
+                var client = new SmtpClient();
+                var mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress("noreply@jylan.dk", "JYLAN", Encoding.UTF8);
                 mailMessage.To.Add(signup.EmailAddress);
                 mailMessage.IsBodyHtml = true;
                 mailMessage.Subject = "Tak for din tilmelding";

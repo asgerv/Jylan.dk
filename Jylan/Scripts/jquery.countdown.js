@@ -8,8 +8,8 @@
  * http://docs.jquery.com/License
  */
 
-(function( $ ) {
-    var init = function( userOptions ) { 
+(function($) {
+    var init = function(userOptions) {
         var options = {
             stepTime: 60,
             format: "dd:hh:mm:ss",
@@ -34,7 +34,7 @@
             // Check the incoming startTime
             // console.log("options.startTime = " + options.startTime);
 
-            if ((typeof options.startTime == 'object') && (options.startTime.constructor == Date)) {
+            if ((typeof options.startTime == "object") && (options.startTime.constructor == Date)) {
                 // console.log("Have been passed a date object? hopefully?");
                 var now = new Date();
                 if (options.startTime.getTime() < now.getTime()) {
@@ -97,23 +97,23 @@
 
             // Calculate what the format should be:
             switch (cCounter) {
-                case 3:
-                    // console.log("options.startTime.split(':', 1).length is " + options.startTime.split(":")[0].length);
-                    if (options.startTime.split(":")[0].length == 3) {
-                        options.format = "ddd:hh:mm:ss";
-                    } else {
-                        options.format = "dd:hh:mm:ss";
-                    }
-                    break;
-                case 2:
-                    options.format = "hh:mm:ss";
-                    break;
-                case 1:
-                    options.format = "mm:ss";
-                    break;
-                case 0:
-                    options.format = "ss";
-                    break;
+            case 3:
+                // console.log("options.startTime.split(':', 1).length is " + options.startTime.split(":")[0].length);
+                if (options.startTime.split(":")[0].length == 3) {
+                    options.format = "ddd:hh:mm:ss";
+                } else {
+                    options.format = "dd:hh:mm:ss";
+                }
+                break;
+            case 2:
+                options.format = "hh:mm:ss";
+                break;
+            case 1:
+                options.format = "mm:ss";
+                break;
+            case 0:
+                options.format = "ss";
+                break;
             }
 
             // console.log("cCounter == " + cCounter);
@@ -129,10 +129,12 @@
                 // console.log("options.startTime[" + i + "] = " + options.startTime[i]);
                 if (parseInt(options.startTime[i]) >= 0) {
                     // console.log("parseInt >= 0");
-                    var elem = jQuery('<div id="cnt_' + i + '" class="cntDigit" />').css({
+                    var elem = jQuery("<div id=\"cnt_" + i + "\" class=\"cntDigit\" />").css({
                         height: options.digitHeight * options.digitImages * 10,
-                        "float": 'left', background: 'url(\'' + options.image + '\')',
-                        width: options.digitWidth});
+                        "float": "left",
+                        background: "url('" + options.image + "')",
+                        width: options.digitWidth
+                    });
                     // console.log("elem = " + elem);
                     digits.push(elem);
                     margin(c, -((parseInt(options.startTime[i]) * options.digitHeight *
@@ -143,53 +145,53 @@
                     // the max. For example second "hours" digit has a conditional max of 4
                     // console.log("options.format[" + i + "] = " + options.format[i]);
                     switch (options.format[i]) {
-                        case 'h':
-                            if (hCounter < 1) {
-                                // console.log("digits[c] = " + digits[c]);
-                                digits[c].__max = 2;
-                                // console.log("settings digits[" + c + "].__max = 2");
-                                hCounter = 1;
-                            } else {
-                                digits[c].__condmax = 3;
-                                // console.log("settings digits[" + c + "].__condmax = 3");
-                            }
-                            break;
-                        case 'd':
-                            digits[c].__max = 9;
-                            break;
-                        case 'm':
-                            if (mCounter < 1) {
-                                digits[c].__max = 5;
-                                mCounter = 1;
-                            } else {
-                                digits[c].__condmax = 9;
-                            }
-                            break;
-                        case 's':
-                            if (sCounter < 1) {
-                                digits[c].__max = 5;
-                                sCounter = 1;
-                            } else {
-                                digits[c].__condmax = 9;
-                            }
-                            break;
+                    case "h":
+                        if (hCounter < 1) {
+                            // console.log("digits[c] = " + digits[c]);
+                            digits[c].__max = 2;
+                            // console.log("settings digits[" + c + "].__max = 2");
+                            hCounter = 1;
+                        } else {
+                            digits[c].__condmax = 3;
+                            // console.log("settings digits[" + c + "].__condmax = 3");
+                        }
+                        break;
+                    case "d":
+                        digits[c].__max = 9;
+                        break;
+                    case "m":
+                        if (mCounter < 1) {
+                            digits[c].__max = 5;
+                            mCounter = 1;
+                        } else {
+                            digits[c].__condmax = 9;
+                        }
+                        break;
+                    case "s":
+                        if (sCounter < 1) {
+                            digits[c].__max = 5;
+                            sCounter = 1;
+                        } else {
+                            digits[c].__condmax = 9;
+                        }
+                        break;
                     }
                     ++c;
                 } else {
-                    elem = jQuery('<div class="cntSeparator"/>').css({"float": 'left'}).text(options.startTime[i]);
+                    elem = jQuery("<div class=\"cntSeparator\"/>").css({ "float": "left" }).text(options.startTime[i]);
                 }
-                where.append('<div>');
+                where.append("<div>");
                 where.append(elem);
-                where.append('</div>');
+                where.append("</div>");
             }
         };
 
         // Set or get element margin
         var margin = function(elem, val) {
             if (val !== undefined)
-                return digits[elem].css({'marginTop': val + 'px'});
+                return digits[elem].css({ 'marginTop': val + "px" });
 
-            return parseInt(digits[elem].css('marginTop').replace('px', ''));
+            return parseInt(digits[elem].css("marginTop").replace("px", ""));
         };
 
         // Makes the movement. This is done by "digitImages" steps.
@@ -208,7 +210,7 @@
                         return;
                     }
                     if ((elem > 0) && (digits[elem].__condmax !== undefined) &&
-                        (digits[elem - 1]._digitInitial == margin(elem - 1)))
+                    (digits[elem - 1]._digitInitial == margin(elem - 1)))
                         margin(elem, -(digits[elem].__condmax * options.digitHeight * options.digitImages));
                     return;
                 }
@@ -218,42 +220,40 @@
                     setTimeout(_move, options.stepTime);
 
                 if (mtop == 0) digits[elem].__isma = true;
-            }
+            };
         };
 
         var start = function() {
             if (interval == undefined)
                 interval = setInterval(moveStep(digits.length - 1), 1000);
-        }
-
+        };
         var pause = function() {
             if (interval) {
                 window.clearInterval(interval);
                 interval = undefined;
             }
-        }
-
+        };
         this.data("countdown", {
             "start": start,
             "pause": pause
         });
 
         $.extend(options, userOptions);
-        this.css({height: options.digitHeight, overflow: 'hidden'});
+        this.css({ height: options.digitHeight, overflow: "hidden" });
         createDigits(this);
         if (options.autoStart) {
             start();
         }
     };
 
-    $.fn.countdown = function( method ) {
+    $.fn.countdown = function(method) {
         var methods = this.data("countdown");
-        if ( methods && methods[method] ) {
-            return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-        } else if ( typeof method === 'object' || ! method ) {
-            return init.apply( this, arguments );
+        if (methods && methods[method]) {
+            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof method === "object" || ! method) {
+            return init.apply(this, arguments);
         } else {
-            $.error( 'Method ' +  method + ' does not exist on jQuery.countdown' );
-        }    
+            $.error("Method " + method + " does not exist on jQuery.countdown");
+        }
     };
-})( jQuery );
+})(jQuery);
