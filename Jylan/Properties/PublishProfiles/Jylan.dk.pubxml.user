@@ -554,7 +554,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>11/05/2015 16:03:28</publishTime>
+      <publishTime>05/13/2015 13:15:56</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>08/05/2015 13:11:02</publishTime>
