@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Web.Mvc;
 using Jylan.Models;
 
@@ -50,6 +51,24 @@ namespace Jylan.Controllers
             {
                 db.Signups.Add(signup);
                 db.SaveChanges();
+
+                var currentEvent = db.Events.ToList().LastOrDefault();
+
+                SmtpClient client = new SmtpClient();
+                MailMessage mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress("noreply@jylan.dk", "JYLAN", System.Text.Encoding.UTF8);
+                mailMessage.To.Add(signup.EmailAddress);
+                mailMessage.IsBodyHtml = true;
+                mailMessage.Subject = "Tak for din tilmelding";
+                mailMessage.Body = "<strong>Hej " + signup.FirstName + "</strong> <br />" +
+                                   "Dette er en bekræftelse for din tilmelding til " + currentEvent.Name + "<br />" +
+                                   "Information omkring eventet og betaling kan findes på jylan.dk/Home/About <br />" +
+                                   "Husk at du kun har sikret din plads, ved at betale på forhånd! <br />" +
+                                   "Vi glæder os til at se dig d. " + currentEvent.StartDateTime.ToString("d. MMM yyyy") +
+                                   ", kl. " + currentEvent.StartDateTime.ToString("HH:mm") + "<br /> <br />" +
+                                   "Venlig hilsen <br />" +
+                                   "<strong>JYLAN</strong><br />";
+                client.Send(mailMessage);
                 return RedirectToAction("SignupComplete", signup);
             }
 
