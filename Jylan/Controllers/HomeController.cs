@@ -16,7 +16,7 @@ namespace Jylan.Controllers
 
             return View(landingPageViewModel);
         }
-
+        [Route("Information")]
         public ActionResult About()
         {
             var currentEvent = db.Events.ToList().LastOrDefault();
@@ -24,7 +24,7 @@ namespace Jylan.Controllers
             if (currentEvent != null) ViewBag.EventPrice = currentEvent.Price;
             return View();
         }
-
+        [Route("Kontakt")]
         public ActionResult Contact()
         {
             return View();

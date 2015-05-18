@@ -18,9 +18,11 @@
                 </ul>
             </li>
             <li>
-                @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", null, new {title = "Manage"})
             </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log ud</a></li>
+            <li>
+                <a href="javascript:document.getElementById('logoutForm').submit()">Log ud</a>
+            </li>
         </ul>
     }
 }

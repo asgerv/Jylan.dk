@@ -39,6 +39,7 @@ namespace Jylan.Controllers
 
         //
         // GET: /Account/Login
+        [Route("Admin")]
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -51,6 +52,7 @@ namespace Jylan.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("Admin")]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)

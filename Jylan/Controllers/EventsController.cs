@@ -11,6 +11,7 @@ namespace Jylan.Controllers
         private readonly JylanContext db = new JylanContext();
         // GET: Events
         [Authorize(Roles = "Admin")]
+        [Route("Begivenhed")]
         public ActionResult Index()
         {
             var @event = db.Events.ToList().LastOrDefault();
@@ -26,6 +27,7 @@ namespace Jylan.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
+        [Route("Begivenhed")]
         public ActionResult Index(
             [Bind(Include = "EventId,Name,StartDateTime,EndDateTime,Price,MaxSignups")] Event @event)
         {

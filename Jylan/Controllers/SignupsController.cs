@@ -13,6 +13,7 @@ namespace Jylan.Controllers
         private readonly JylanContext db = new JylanContext();
         // GET: Signups
         [Authorize(Roles = "Admin")]
+        [Route("Tilmeldinger")]
         public ActionResult Index()
         {
             return View(db.Signups.ToList());
@@ -35,6 +36,7 @@ namespace Jylan.Controllers
         }
 
         // GET: Signups/Create
+        [Route("Tilmelding")]
         public ActionResult Create()
         {
             return View();
@@ -45,6 +47,7 @@ namespace Jylan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("Tilmelding")]
         public ActionResult Create(
             [Bind(Include = "SignupId,EmailAddress,Nick,FirstName,LastName,PhoneNumber,HasPayed")] Signup signup)
         {
@@ -78,6 +81,7 @@ namespace Jylan.Controllers
 
         // GET: Signups/Edit/5
         [Authorize(Roles = "Admin")]
+        [Route("Tilmeldinger/{id:int}")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -98,6 +102,7 @@ namespace Jylan.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
+        [Route("Tilmeldinger/{id:int}")]
         public ActionResult Edit(
             [Bind(Include = "SignupId,EmailAddress,Nick,FirstName,LastName,PhoneNumber,HasPayed")] Signup signup)
         {
@@ -112,6 +117,7 @@ namespace Jylan.Controllers
 
         // GET: Signups/Delete/5
         [Authorize(Roles = "Admin")]
+        [Route("Tilmeldinger/Slet/{id:int}")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -130,6 +136,7 @@ namespace Jylan.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
+        [Route("Tilmeldinger/Slet/{id:int}")]
         public ActionResult DeleteConfirmed(int id)
         {
             var signup = db.Signups.Find(id);
