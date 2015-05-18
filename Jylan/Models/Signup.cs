@@ -6,7 +6,7 @@ namespace Jylan.Models
     {
         public int SignupId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Feltet '{0}' er påkrævet.")]
         [Display(Name = "Email Adresse")]
         [DataType(DataType.EmailAddress)]
         public string EmailAddress { get; set; }
@@ -14,15 +14,15 @@ namespace Jylan.Models
         [Display(Name = "Nickname")]
         public string Nick { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Feltet '{0}' er påkrævet.")]
         [Display(Name = "Fornavn")]
         public string FirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Feltet '{0}' er påkrævet.")]
         [Display(Name = "Efternavn")]
         public string LastName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Feltet '{0}' er påkrævet.")]
         [Display(Name = "Telefon nr.")]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }
