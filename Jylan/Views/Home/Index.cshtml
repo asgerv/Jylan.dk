@@ -6,11 +6,10 @@
 }
 @{
     ViewBag.Title = "Forside";
-    //var timeSpanLeft = @Model.StartDateTime - DateTime.Now;
-    var timeSpanLeft = new TimeSpan(420, 13, 37, 59);
+    var timeSpanLeft = @Model.StartDateTime - DateTime.Now;
 }
 
-<input id="timeleft" type="hidden" value="@timeSpanLeft.Days:@timeSpanLeft.Hours.ToString("00"):@timeSpanLeft.Minutes.ToString("00"):@timeSpanLeft.Seconds"/>
+<input id="timeleft" type="hidden" value="@timeSpanLeft.Days:@timeSpanLeft.Hours.ToString("00"):@timeSpanLeft.Minutes.ToString("00"):@timeSpanLeft.Seconds" />
 
 <div class="jumbotron">
     <h1>JYLAN</h1>
@@ -75,7 +74,7 @@
                 </td>
             </tr>
         </table>
-        <br/>
+        <br />
         <a href="@Url.Action("Create", "Signups")" class="btn btn-info btn-lg">Tilmeld dig her &raquo;</a>
     </div>
     <div class="col-md-9">
