@@ -16,6 +16,7 @@ namespace Jylan.Controllers
 
             return View(landingPageViewModel);
         }
+
         [Route("Information")]
         public ActionResult About()
         {
@@ -24,6 +25,7 @@ namespace Jylan.Controllers
             if (currentEvent != null) ViewBag.EventPrice = currentEvent.Price;
             return View();
         }
+
         [Route("Kontakt")]
         public ActionResult Contact()
         {
