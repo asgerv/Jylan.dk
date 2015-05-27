@@ -6,23 +6,34 @@
 }
 @{
     ViewBag.Title = "Forside";
+    var timeSpanLeft = @Model.StartDateTime - DateTime.Now;
 }
+
+<input id="timeleft" type="hidden" value="@timeSpanLeft.Days:@timeSpanLeft.Hours.ToString("00"):@timeSpanLeft.Minutes.ToString("00"):@timeSpanLeft.Seconds" />
+
 <div class="jumbotron">
     <h1>JYLAN</h1>
     <p class="lead">Jysk lan party - Information og tilmelding</p>
     <p class="hidden-xs">Næste LAN starter om</p>
     <div id="counter" class="hidden-xs" style="font-size: 54px;"></div>
+    @if (timeSpanLeft.Days > 99)
+    {
+        <div class="desc100 hidden-xs">
+            <div>Dage</div>
+        </div>
+    }
+    else
+    {
+        <div class="desc hidden-xs">
+            <div>Dage</div>
+        </div>
+    }
     <div class="desc hidden-xs">
-        <div>Dage</div>
         <div>Timer</div>
         <div>Minutter</div>
         <div>Sekunder</div>
     </div>
 </div>
-@{
-    var timeSpanLeft = @Model.StartDateTime - DateTime.Now;
-}
-<input id="timeleft" type="hidden" value="@timeSpanLeft.Days:@timeSpanLeft.Hours.ToString("00"):@timeSpanLeft.Minutes.ToString("00"):@timeSpanLeft.Seconds" />
 
 <div class="row">
     <div class="col-md-3">

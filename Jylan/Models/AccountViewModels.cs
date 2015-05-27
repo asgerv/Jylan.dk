@@ -50,12 +50,12 @@ namespace Jylan.Models
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Indtast din email.")]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Indtast din adgangskode.")]
         [DataType(DataType.Password)]
         [Display(Name = "Adgangskode")]
         public string Password { get; set; }

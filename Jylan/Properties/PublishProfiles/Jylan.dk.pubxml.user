@@ -10,6 +10,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <_PublishTargetUrl>ftp://ftp.jylan.dk/public_html</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="App_Start/RouteConfig.cs">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="App_Start/Startup.Auth.cs">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
@@ -20,7 +26,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/Jylan.dll">
-      <publishTime>11/05/2015 18:14:44</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -116,7 +122,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/05/2015 15:55:05</publishTime>
     </File>
     <File Include="Content/Images/jumbotron_jylland.png">
-      <publishTime>05/18/2015 12:28:36</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Content/Images/jylland.png">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -233,6 +239,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2015 13:11:02</publishTime>
     </File>
     <File Include="Content/zocial.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Controllers/AccountController.cs">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Controllers/EventsController.cs">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Controllers/HomeController.cs">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Controllers/SignupsController.cs">
@@ -425,7 +440,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/05/2015 13:11:02</publishTime>
     </File>
     <File Include="Scripts/jquery.countdown.js">
-      <publishTime>11/05/2015 15:55:05</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.js">
       <publishTime>08/05/2015 13:11:02</publishTime>
@@ -446,7 +461,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/myscripts.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>05/27/2015 10:26:32</publishTime>
     </File>
     <File Include="Scripts/respond.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -455,7 +470,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>11/05/2015 15:55:05</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -506,7 +521,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Events/Index.cshtml">
-      <publishTime>08/05/2015 13:11:02</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -545,7 +560,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/EditorTemplates/DateTime.cshtml">
-      <publishTime>08/05/2015 13:11:02</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>11/05/2015 13:48:40</publishTime>
@@ -557,7 +572,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>08/05/2015 13:11:02</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Views/Shared/_PaymentPartial.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -587,7 +602,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/05/2015 18:14:51</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
   </ItemGroup>
 </Project>

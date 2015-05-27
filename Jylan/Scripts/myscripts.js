@@ -6,8 +6,10 @@ $(function() {
         showWeek: true,
         firstDay: 1,
         monthNames: ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"],
+        monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"],
         dateFormat: "dd-mm-yy",
-        changeYear: true
+        changeYear: true,
+        changeMonth: true
     });
 });
 

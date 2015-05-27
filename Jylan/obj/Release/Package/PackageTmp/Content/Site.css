@@ -14,29 +14,36 @@
    will truncate terms that are too long to fit in the left column 
 */
 
-.dl-horizontal dt {
-    white-space: normal;
-}
+.dl-horizontal dt { white-space: normal; }
 
 /* Set width on the form input elements since they're 100% wide by default */
 
 input,
 select,
-textarea {
-    max-width: 280px;
-}
+textarea { max-width: 280px; }
 
 /* Added desc for displaying days/hours/minutes/seconds on countdown */
-.desc {
-    margin: 7px 3px;
+
+.desc { margin: 7px 3px; }
+
+.desc div {
+    color: #000;
+    float: left;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 50px;
+    width: 70px;
 }
 
-    .desc div {
-        float: left;
-        font-family: Arial;
-        width: 70px;
-        margin-right: 50px;
-        font-size: 13px;
-        font-weight: bold;
-        color: #000;
-    }
+.desc100 { margin: 7px 3px; }
+
+.desc100 div {
+    color: #000;
+    float: left;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 50px;
+    width: 120px;
+}
