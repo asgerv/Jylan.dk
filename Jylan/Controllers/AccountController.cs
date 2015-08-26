@@ -39,6 +39,7 @@ namespace Jylan.Controllers
 
         //
         // GET: /Account/Login
+        [Route("Admin")]
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -51,6 +52,7 @@ namespace Jylan.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
+        [Route("Admin")]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
@@ -71,7 +73,7 @@ namespace Jylan.Controllers
                     return RedirectToAction("SendCode", new {ReturnUrl = returnUrl, model.RememberMe});
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Invalidt login forsøg.");
                     return View(model);
             }
         }

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - JYLAN</title>
     @Styles.Render("~/Content/css")
@@ -12,39 +12,43 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/myscripts")
-    <meta name="description" content="JYLAN - JYSK LAN PARTY" />
+    <meta name="description" content="JYLAN - JYSK LAN PARTY"/>
+    <meta name="google-site-verification" content="HRFi3cvp1Kk_Xuqw6HqQInH4eDGQA7AVTZHpnNyzngM"/>
+    <meta name="author" content="Asger Vestbjerg">
+    <meta name="keywords" content="lan, jysk, jylland, lanparty, counterstrike, csgo, counter strike global offensive, league of legends, lintrup, rødding, vejen">
     <link href="../../Content/zocial.css" rel="stylesheet">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGOY7ScRmGjLtW0DulPw-PcVZwjyDBYBU"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("JYLAN", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Forside", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Information", "About", "Home")</li>
-                    <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("JYLAN", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Forside", "Index", "Home")</li>
+                <li>@Html.ActionLink("Information", "About", "Home")</li>
+                <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer style="bottom: 0; position: fixed;">
-            <p>
-                &copy; @DateTime.Now.Year - <a href="mailto:asgerv@gmail.com" target="_top">Asger Vestbjerg</a>
-            </p>
-        </footer>
-    </div>
-    @RenderSection("scripts", false)
+</div>
+<div class="container body-content">
+    @RenderBody()
+    <hr/>
+    <footer>
+        <p>
+            &copy; @DateTime.Now.Year - <a href="mailto:asgerv@gmail.com" target="_top">Asger Vestbjerg</a>
+        </p>
+    </footer>
+</div>
+@RenderSection("scripts", false)
 </body>
 </html>

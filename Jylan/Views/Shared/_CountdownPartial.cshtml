@@ -1,0 +1,16 @@
+﻿@model DateTime?
+
+<head>
+    <title>ViewBag.Title</title>
+    <script> src="~/Scripts/jquery.countdown.js"</script>
+    <script type="text/javascript">
+    $("#getting-started")
+    .countdown("2016/01/01", function (event) {
+        $(this).text(
+          event.strftime('%D days %H:%M:%S')
+        );
+    });
+    </script>
+</head> 
+<div id="getting-started"></div>
+

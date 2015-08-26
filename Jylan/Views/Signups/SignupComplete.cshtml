@@ -3,68 +3,117 @@
     ViewBag.Title = "Tilmelding gennemført";
 }
 <div>
+
     <h2>@ViewBag.Title</h2>
-    <p class="text-success">Tak for din tilmelding.</p>
-    <p class="text-success">
-        <span class="glyphicon glyphicon-exclamation-sign"></span>
-        For at sikre din plads, anbefaler vi du betaler med det samme.
-        <span class="glyphicon glyphicon-exclamation-sign"></span>
+
+    <p>
+
+        Tak for din tilmelding til det næste JYLAN.<br/>
+
+        Du læse mere om adresse, regler, og anden information på @Html.ActionLink("JYLAN/Information", "About", "Home")<br/>
+
+        Vi glæder os til at se dig!<br/>
+
     </p>
-    <p class="text-success">
+
+    <h3>Betaling</h3>
+
+    <p>
+
+        For at sikre din plads, anbefaler vi du betaler med det samme.<br/>
+
         <strong>Pris: </strong>@ViewBag.EventPrice kr<br/>
+
         <strong>HUSK: </strong>Skriv din email som besked, så vi kan se det er dig, der har betalt.
+
     </p>
+
+
     @Html.Partial("_PaymentPartial")
-    <h3>Dine informationer:</h3>
+
+
+    <h3>Dine informationer</h3>
+
+    <p>Tjek venligst om dine indtastede informationer er korrekte</p>
+
     <hr/>
+
     <dl class="dl-horizontal">
+
         <dt>
+
             @Html.DisplayNameFor(model => model.EmailAddress)
         </dt>
 
+
         <dd>
+
             @Html.DisplayFor(model => model.EmailAddress)
         </dd>
+
         <dt>
+
             @Html.DisplayNameFor(model => model.Nick)
         </dt>
 
+
         <dd>
+
             @Html.DisplayFor(model => model.Nick)
         </dd>
+
         <dt>
+
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
 
+
         <dd>
+
             @Html.DisplayFor(model => model.FirstName)
         </dd>
 
+
         <dt>
+
             @Html.DisplayNameFor(model => model.LastName)
         </dt>
 
+
         <dd>
+
             @Html.DisplayFor(model => model.LastName)
         </dd>
 
+
         <dt>
+
             @Html.DisplayNameFor(model => model.PhoneNumber)
         </dt>
 
+
         <dd>
+
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
 
+
         <dt>
+
             @Html.DisplayNameFor(model => model.HasPayed)
         </dt>
 
+
         <dd>
+
             @Html.DisplayFor(model => model.HasPayed)
         </dd>
 
+
     </dl>
-    <p class="text-success">Har du problemer eller rettelser, så kontakt os. </p>
+
+    <p>Har du spørgsmål eller rettelser, så kontakt os.</p>
+
     <p>@Html.ActionLink("Kontakt information", "Contact", "Home")</p>
+
 </div>
