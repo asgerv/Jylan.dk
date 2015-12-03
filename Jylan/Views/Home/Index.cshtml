@@ -1,120 +1,142 @@
-﻿@using Jylan.Models
-@model LandingPageViewModel
-@{
-    // This is shit.
-    var signupModel = new Signup();
-}
-@{
-    ViewBag.Title = "Forside";
-    var timeSpanLeft = @Model.StartDateTime - DateTime.Now;
-}
-
-<input id="timeleft" type="hidden" value="@timeSpanLeft.Days:@timeSpanLeft.Hours.ToString("00"):@timeSpanLeft.Minutes.ToString("00"):@timeSpanLeft.Seconds"/>
-
-<div class="jumbotron">
-    <h1>JYLAN</h1>
-    <p class="lead">Jysk lan party - Information og tilmelding</p>
-    <p class="hidden-xs">Næste LAN starter om</p>
-    <div id="counter" class="hidden-xs" style="font-size: 54px;"></div>
-    @if (timeSpanLeft.Days > 99)
-    {
-        <div class="desc100 hidden-xs">
-            <div>Dage</div>
+﻿<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>JYLAN</h1>
+            <hr>
+            <p>Jysk lan party - Information og tilmelding</p>
+            <a href="#videosettings" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
         </div>
-    }
-    else
-    {
-        <div class="desc hidden-xs">
-            <div>Dage</div>
+    </div>
+</header>
+<section class="bg-dark" id="videosettings">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Video Settings</h2>
+                <hr class="light">
+                <p class="text-faded">It's important to have and stable fps above <b>150</b> in CSGO.</p>
+                <p class="text-faded">Set your settings as low as you want them, it's better to have the settings lower, than having low fps. Brightness should be on lowest value, and shadows can give you an advantage in certain situations.</p>
+                <p class="text-faded">I recommend you to spend some time finding the values that suits you. The only reason I'm using 1024x768 is because I'm used to 4:3 from 1.6, and I feel like I can play better with it. Be aware that it actually gives you a smaller POV.</p>
+                <h3>CSGO &raquo; Options &raquo; Video Settings</h3>
+
+            </div>
+            <a href="res/videosettings_1080p.jpg"><img src="res/videosettings_1080p.jpg" class="img-responsive img-rounded" alt="Video Settings:" /></a>
         </div>
-    }
-    <div class="desc hidden-xs">
-        <div>Timer</div>
-        <div>Minutter</div>
-        <div>Sekunder</div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-md-3">
-        <h2>@Model.Name</h2>
-        <table style="width: 100%;">
-            <tr>
-                <td>
-                    <strong>Tilmeldte:</strong>
-                </td>
-                <td style="text-align: right;">
-                    <span>@Model.Signups.Count()</span>
-                    /
-                    <span>@Model.MaxSignups</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Pris:</strong>
-                </td>
-                <td style="text-align: right;">
-                    <span>@Model.Price kr.</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Start:</strong>
-                </td>
-                <td style="text-align: right;">
-                    <span>@Html.DisplayFor(model => model.StartDateTime)</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Slut:</strong>
-                </td>
-                <td style="text-align: right;">
-                    <span>@Html.DisplayFor(model => model.EndDateTime)</span>
-                </td>
-            </tr>
-        </table>
-        <br/>
-        <a href="@Url.Action("Create", "Signups")" class="btn btn-info btn-lg">Tilmeld dig her &raquo;</a>
+</section>
+<section id="config">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Config file</h2>
+                <hr class="primary">
+                <p class="text-muted">Throughout the history of Counter-Strike, it have always been necessary to change your config file, and Global Offensive is no different.</p>
+                <p class="text-muted">
+                    Here's my autoexec, which you should save at <b>SteamApps\common\Counter-Strike Global Offensive\csgo\cfg.</b>
+                </p>
+                <p class="text-muted">Find your csgo path: Right click on CSGO in Steam - Properties - Local files - Browse Local Files</p>
+                <a href="res/autoexec.cfg" class="btn btn-danger btn-xl wow tada">Right click here and save as</a>
+                <br /><br />
+                <p class="text-muted">
+                    For more information about autoexec go to <a href="http://csgohelp.com/autoexec-qa/" target="_blank">csgohelp.com/autoexec-qa</a>
+                </p>
+            </div>
+        </div>
     </div>
-    <div class="col-md-9">
-        <h2>Tilmeldte </h2>
-        <div class="table-responsive">
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => signupModel.FirstName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => signupModel.LastName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => signupModel.Nick)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => signupModel.HasPayed)
-                    </th>
-                    <th></th>
-                </tr>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-exclamation-triangle wow bounceIn text-primary" data-wow-delay=".5s"></i>
+                    <h3>Tips and tricks</h3>
+                    <p class="text-muted">Press 'H' to jumpthrow</p><br />
+                    <p class="text-muted">Press 'T' for selecting Incindiary or molotov.</p><br />
+                    <p class="text-muted">Change the sensivity in the autoexec.cfg file, or you'll have to change it everytime you open the game.</p><br />
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-crosshairs wow bounceIn text-primary" data-wow-delay="1s"></i>
+                    <h3>Crosshair</h3>
+                    <p class="text-muted">I have my custom crosshair installed in the autoexec. Feel free to use it, or change it if you want another.</p>
+                    <p class="text-muted">
+                        You can design your own crosshair at <a href="http://tools.dathost.net/" target="_blank">tools.dathost.net</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-shopping-cart wow bounceIn text-primary" data-wow-delay="1.5s"></i>
+                    <h3>Buyscript</h3>
+                    <p class="text-muted">I have a buyscript on my NUMPAD.</p>
+                    <a href="res/buyscript.jpg"><img src="res/buyscript.jpg" class="img-responsive img-rounded" alt="Buyscript numpad" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                @foreach (var item in Model.Signups)
-                {
+
+<section class="bg-dark" id="launchoptions">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Launch Options</h2>
+                <hr class="light">
+                <p class="text-faded">Tweak your cs even more with launch options.</p>
+                <p class="text-faded">Right click on CSGO in Steam - Properties - Set Launch Options</p>
+                <a href="res/launchoptions.jpg"><img src="res/launchoptions.jpg" class="img-responsive" style="margin: 0 auto" alt="Video Settings:" /></a>
+                <br /><p class="text-faded">
+                    I have the following: <b>-novid -console -high -freq 120</b>
+                </p>
+                <table class="table table-responsive table-bordered">
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.FirstName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.LastName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Nick)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.HasPayed)
-                        </td>
+                        <td><b>-freq 120</b></td>
+                        <td>Sets your hertz to 120. DONT HAVE THIS IF YOUR MONITOR DOESN'T SUPPORT IT.</td>
                     </tr>
-                }
-            </table>
+                    <tr>
+                        <td><b>-high</b></td>
+                        <td>Sets Counter-Strike to high priority.</td>
+                    </tr>
+                    <tr>
+                        <td><b>-novid</b></td>
+                        <td>Remove's the intro video on game start.</td>
+                    </tr>
+                    <tr>
+                        <td><b>-console</b></td>
+                        <td>Enables console.</td>
+                    </tr>
+                </table>
+                <a href="http://csgohelp.com/launch-options/" target="_blank">Learn more about launch options here!</a>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section id="practice">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Practice</h2>
+                <hr class="primary">
+                <p>Learn how to practice good flashes, smokes and other grenades.</p>
+                <img src="res/comingsoon.jpg" class="img-responsive" style="margin: 0 auto" alt="" />
+            </div>
+        </div>
+    </div>
+</section>
+<aside class="bg-dark">
+    <div class="container text-center">
+        <div class="call-to-action">
+            <h2>Created by Asger 'Jorn' Vestbjerg!</h2>
+        </div>
+    </div>
+</aside>
+
+    <!-- Plugin JavaScript -->
+    @*<script src="~/Scripts/jquery.easing.min.js"></script>*@
+    @*<script src="~/Scripts/jquery.fittext.js"></script>*@
+    @*<script src="~/Scripts/wow.min.js"></script>*@
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Scripts/creative.js"></script>
+

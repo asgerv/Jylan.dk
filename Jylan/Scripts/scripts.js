@@ -1,7 +1,4 @@
-﻿// Customized scripts
-// EDITED BY: ASGERV
-
-$(function() {
+﻿$(function() {
     $(".datepick").datetimepicker({
         showWeek: true,
         firstDay: 1,
