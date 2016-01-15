@@ -1,4 +1,5 @@
-﻿<header>
+﻿@using Jylan.Models
+<header>
     <div class="header-content">
         <div class="header-content-inner">
             <h1>JYLAN</h1>
@@ -8,19 +9,24 @@
         </div>
     </div>
 </header>
-<section class="bg-dark" id="videosettings">
+<section class="bg-dark" id="Events">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Video Settings</h2>
+                <h2 class="section-heading">Næste LAN</h2>
                 <hr class="light">
-                <p class="text-faded">It's important to have and stable fps above <b>150</b> in CSGO.</p>
-                <p class="text-faded">Set your settings as low as you want them, it's better to have the settings lower, than having low fps. Brightness should be on lowest value, and shadows can give you an advantage in certain situations.</p>
-                <p class="text-faded">I recommend you to spend some time finding the values that suits you. The only reason I'm using 1024x768 is because I'm used to 4:3 from 1.6, and I feel like I can play better with it. Be aware that it actually gives you a smaller POV.</p>
+                @*@if (Event.Start - Today > 0)
+                {
+                    <p>Next Event er ikke officletgjort endnu</p>
+                }*@
+                <p class="text-faded">Knap til tilmelding af næste LAN</p>
+                <p class="text-faded">Tilmeldte / Max tilmeldte</p>
+                <p class="text-faded">Start/Slut</p>
+                <p class="text-faded">Pris</p>
+                <p class="text-faded">Start/Slut</p>
                 <h3>CSGO &raquo; Options &raquo; Video Settings</h3>
 
             </div>
-            <a href="res/videosettings_1080p.jpg"><img src="res/videosettings_1080p.jpg" class="img-responsive img-rounded" alt="Video Settings:" /></a>
         </div>
     </div>
 </section>
@@ -128,15 +134,19 @@
 <aside class="bg-dark">
     <div class="container text-center">
         <div class="call-to-action">
-            <h2>Created by Asger 'Jorn' Vestbjerg!</h2>
+            <h2>asdasdsadasdads</h2>
+            <p>asdsasd lol asdkjasdskj ajdsa kdas</p>
         </div>
     </div>
+    <footer>
+        <p>
+            &copy; @DateTime.Now.Year - <a href="mailto:asgerv@gmail.com" target="_top">Asger Vestbjerg</a>
+        </p>
+    </footer>
 </aside>
-
-    <!-- Plugin JavaScript -->
-    @*<script src="~/Scripts/jquery.easing.min.js"></script>*@
-    @*<script src="~/Scripts/jquery.fittext.js"></script>*@
-    @*<script src="~/Scripts/wow.min.js"></script>*@
-    <!-- Custom Theme JavaScript -->
-    <script src="~/Scripts/creative.js"></script>
-
+<script src="~/Scripts/creative.js"></script>*
+<!-- Plugin JavaScript -->
+@*<script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/jquery.fittext.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>*@
+<!-- Custom Theme JavaScript -->
