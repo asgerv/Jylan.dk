@@ -8,10 +8,14 @@ namespace Jylan
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                "~/Scripts/jquery-2.1.3.min.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                "~/Scripts/jquery.validate*"));
+                "~/Scripts/jquery-2.2.0js",
+                "~/Scripts/jquery-2.2.0.min.js",
+                "~/Scripts/bootstrap.min.js",
+                "~/Scripts/jquery.easing.min.js",
+                "~/Scripts/jquery.fittext.js",
+                "~/Scripts/wow.min.js",
+                "~/Scripts/creative.js"
+                ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -23,7 +27,6 @@ namespace Jylan
                 ));
             //"~/Scripts/respond.js"
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                "~/Scripts/jquery-2.1.3.js",
                 "~/Scripts/jquery-ui-1.11.4.js",
                 "~/Scripts/jquery-ui-timepicker-addon.js",
                 "~/Scripts/jquery.countdown.js"
@@ -42,10 +45,10 @@ namespace Jylan
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.min.css",
-                "~/Content/animate.min.css",
-                "~/Content/creative.css",
                 "~/Content/font-awesome/css/font-awesome.min.css",
-                "~/Content/zocial.css"
+                "~/Content/animate.min.css",
+                //"~/Content/zocial.css"
+                "~/Content/creative.css"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/jqueryui").Include(
