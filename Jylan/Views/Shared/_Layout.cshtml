@@ -10,22 +10,15 @@
     <title>JYLAN</title>
 
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/jqueryui")
 
-    @*Styles.Render("~/Content/jqueryui")*@
+    @*<script src="~/Scripts/scripts.js"></@*script>
 
-
-    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet"/>
-        <link href="~/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-        <link href="~/Content/animate.min.css" rel="stylesheet"/>
-        <link href="~/Content/creative.css" rel="stylesheet"/>*@
-
-    @*@*<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGOY7ScRmGjLtW0DulPw-PcVZwjyDBYBU"></script>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,80" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">*@
 </head>
 
 <body id="page-top">
-    @*Shouldnt use affix*@
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -43,13 +36,13 @@
                         <a class="page-scroll" href="#events">Events</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#config">Config</a>
+                        <a class="page-scroll" href="#information">Information</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#launchoptions">Launch Options</a>
+                        <a class="page-scroll" href="#konkurrencer">Konkurrencer</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#practice">Practice</a>
+                        <a class="page-scroll" href="#kontakt">Kontakt</a>
                     </li>
                 </ul>
             </div>
@@ -57,21 +50,16 @@
     </nav>
 
     @RenderBody()
+    <hr />
+    <footer style="text-align: center">
+        <p>
+            &copy; @DateTime.Now.Year - <a href="mailto:asgerv@gmail.com" target="_top">Asger Vestbjerg</a>
+        </p>
+    </footer>
+
     @Scripts.Render("~/bundles/jquery")
-
-@*<script src="~/Scripts/jquery-2.2.0.min.js"></script>
-        <script src="~/Scripts/bootstrap.min.js"></script>
-        <script src="~/Scripts/jquery.easing.min.js"></script>
-        <script src="~/Scripts/jquery.fittext.js"></script>
-        <script src="~/Scripts/wow.min.js"></script>
-        <script src="~/Scripts/creative.js"></script>*@
-
-    @*<script src="~/Scripts/creative.js"></script>*@
-    @*@Scripts.Render("~/bundles/jquery")*@
-    @*@Scripts.Render("~/bundles/bootstrap")*@
-    @*@Scripts.Render("~/bundles/pluginjs")*@
-    @* @Scripts.Render("~/bundles/modernizr")*@
-    @*@Scripts.Render("~/bundles/jqueryui")*@
-    @*@Scripts.Render("~/bundles/scripts")*@
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/scripts")
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGOY7ScRmGjLtW0DulPw-PcVZwjyDBYBU"></script>
 </body>
 </html>

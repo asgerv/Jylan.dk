@@ -1,151 +1,271 @@
 ﻿@using Jylan.Models
+@model LandingPageViewModel
+@{
+    // This is shit.
+    var signupModel = new Signup();
+}
+@{
+    ViewBag.Title = "Forside";
+    var timeSpanLeft = @Model.StartDateTime - DateTime.Now;
+}
+
+<input id="timeleft" type="hidden" value="@timeSpanLeft.Days:@timeSpanLeft.Hours.ToString("00"):@timeSpanLeft.Minutes.ToString("00"):@timeSpanLeft.Seconds" />
+<input id="eventstartdate" type="hidden" value="@Model.StartDateTime.ToString("MM\'/'dd\'/'yyyy hh:mm:ss")" />
+
 <header>
     <div class="header-content">
         <div class="header-content-inner">
             <h1>JYLAN</h1>
             <hr>
-            <p>Jysk lan party - Information og tilmelding</p>
-            <a href="#videosettings" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+            <p>Lokalt LAN party i Lintrup - Information og tilmelding</p>
+
+            <p class="hidden-xs">Næste LAN starter om</p>
+            <div id="clock" style="font-size: 35px;"></div><br />
+            <a href="#events" class="btn btn-primary btn-xl page-scroll">Se mere</a>
         </div>
     </div>
 </header>
 <section class="bg-dark" id="events">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Næste LAN</h2>
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Events</h2>
                 <hr class="light">
-                @*@if (Event.Start - Today > 0)
-                    {
-                        <p>Next Event er ikke officletgjort endnu</p>
-                    }*@
-                <p class="text-faded">Knap til tilmelding af næste LAN</p>
-                <p class="text-faded">Tilmeldte / Max tilmeldte</p>
-                <p class="text-faded">Start/Slut</p>
-                <p class="text-faded">Pris</p>
-                <p class="text-faded">Start/Slut</p>
-                <span class=""></span>
+                <p>
+                    Her kan du finde information og tilmelding til det næste JYLAN.<br />
+                    For at gennemse tidligere events, kan du
+                    <a href="#">klikke her.</a>
+                </p>
+                <br />
+            </div>
+            <div class="col-lg-4 text-center">
+                <h3 class="section-heading wow bounceInLeft" data-wow-delay="0.5s">@Model.Name</h3>
+                <hr class="light wow bounceInLeft" data-wow-delay=".8s">
+                <table class="wow bounceInLeft" data-wow-delay="1.1s" style="margin: 0 auto;">
+                    <tr>
+                        <td style="text-align: left;">
+                            <strong>Tilmeldte:</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <span>@Model.Signups.Count()</span>
+                            /
+                            <span>@Model.MaxSignups</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            <strong>Pris:</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <span>@Model.Price kr.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            <strong>Start:</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <span>@Html.DisplayFor(model => model.StartDateTime)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            <strong>Slut:</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <span>@Html.DisplayFor(model => model.EndDateTime)</span>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <a href="@Url.Action("Create", "Signups")" class="btn btn-primary btn-xl wow bounceInLeft" data-wow-delay="1.5s">Tilmeld dig her</a>
+
+            </div>
+            <div class="col-lg-8 text-center">
+                <h3 class="section-heading">Tilmeldte</h3>
+
+                <hr class="light">
+                <div class="table-responsive">
+                    <table class="table" style="text-align: left;">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => signupModel.FirstName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => signupModel.LastName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => signupModel.Nick)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => signupModel.HasPayed)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model.Signups)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nick)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HasPayed)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<section id="config">
+<section id="information">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Config file</h2>
+                <h2 class="section-heading">Information</h2>
                 <hr class="primary">
-                <p class="text-muted">Throughout the history of Counter-Strike, it have always been necessary to change your config file, and Global Offensive is no different.</p>
-                <p class="text-muted">
-                    Here's my autoexec, which you should save at <b>SteamApps\common\Counter-Strike Global Offensive\csgo\cfg.</b>
-                </p>
-                <p class="text-muted">Find your csgo path: Right click on CSGO in Steam - Properties - Local files - Browse Local Files</p>
-                <a href="res/autoexec.cfg" class="btn btn-danger btn-xl wow tada">Right click here and save as</a>
-                <br /><br />
-                <p class="text-muted">
-                    For more information about autoexec go to <a href="http://csgohelp.com/autoexec-qa/" target="_blank">csgohelp.com/autoexec-qa</a>
-                </p>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 text-center">
+            <div class="col-md-6 text-center">
                 <div class="service-box">
-                    <i class="fa fa-4x fa-exclamation-triangle wow bounceIn text-primary" data-wow-delay=".5s"></i>
-                    <h3>Tips and tricks</h3>
-                    <p class="text-muted">Press 'H' to jumpthrow</p><br />
-                    <p class="text-muted">Press 'T' for selecting Incindiary or molotov.</p><br />
-                    <p class="text-muted">Change the sensivity in the autoexec.cfg file, or you'll have to change it everytime you open the game.</p><br />
-                </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-crosshairs wow bounceIn text-primary" data-wow-delay="1s"></i>
-                    <h3>Crosshair</h3>
-                    <p class="text-muted">I have my custom crosshair installed in the autoexec. Feel free to use it, or change it if you want another.</p>
+                    <i class="fa fa-4x fa-info-circle wow bounceIn text-primary" data-wow-delay=".5s"></i>
                     <p class="text-muted">
-                        You can design your own crosshair at <a href="http://tools.dathost.net/" target="_blank">tools.dathost.net</a>
+                        <h3>Generelt</h3>
+                    <p class="text-muted">Der vil være mulighed for benyttelse af køkkenfaciliteter, heriblandt køleskab, fryser, ovn, kogeplade og andet udstyr. Der er også mulighed for madlevering.</p>
+                    <br /><strong>Medbring:</strong><br>
+                    <p class="text-muted">
+                        LAN-kabel på min. 5 meter,
+                        Stikdåse,
+                        PC,
+                        Skærm,
+                        Mus,
+                        Musemåtte,
+                        Tastatur
                     </p>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-6 text-center">
                 <div class="service-box">
-                    <i class="fa fa-4x fa-shopping-cart wow bounceIn text-primary" data-wow-delay="1.5s"></i>
-                    <h3>Buyscript</h3>
-                    <p class="text-muted">I have a buyscript on my NUMPAD.</p>
-                    <a href="res/buyscript.jpg"><img src="res/buyscript.jpg" class="img-responsive img-rounded" alt="Buyscript numpad" /></a>
+                    <i class="fa fa-4x fa-dollar wow bounceIn text-primary" data-wow-delay="1s"></i>
+                    <h3>Betaling</h3>
+                    <p class="text-muted">
+                        <b>Pris: @ViewBag.EventPrice kr.</b>
+                    </p>
+                    <p class="text-muted">
+                        <strong>HUSK: </strong>Skriv din email som besked, så vi kan se det er dig, der har betalt.
+                    </p>
+                    @Html.Partial("_PaymentPartial")
                 </div>
             </div>
+            <div class="col-lg-12 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-map-marker wow bounceIn text-primary" data-wow-delay="1s"></i>
+                    <h3>Lokation</h3>
+                    <p>
+                        Lintrup Aktivitetscenter<br />Kirkepladsen 1, 6660 Lintrup
+                    </p>
+                    <div id="map_canvas" style="display: block; height: 500px; width: auto;"></div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
 
-<section class="bg-dark" id="launchoptions">
+<section class="bg-dark" id="konkurrencer">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Launch Options</h2>
+                <h2 class="section-heading">Konkurrencer</h2>
                 <hr class="light">
-                <p class="text-faded">Tweak your cs even more with launch options.</p>
-                <p class="text-faded">Right click on CSGO in Steam - Properties - Set Launch Options</p>
-                <a href="res/launchoptions.jpg"><img src="res/launchoptions.jpg" class="img-responsive" style="margin: 0 auto" alt="Video Settings:" /></a>
-                <br /><p class="text-faded">
-                    I have the following: <b>-novid -console -high -freq 120</b>
-                </p>
-                <table class="table table-responsive table-bordered">
+                <p class="text-faded">Her kan du lære mere om hvilke konkurrencer der vil finde sted til JYLAN.</p>
+                <p>Tag kontakt til Tue hvis du har idéer.</p>
+                <i class="fa fa-4x fa-trophy wow bounceIn text-primary" data-wow-delay="1s"></i>
+                @*<a href="res/launchoptions.jpg"><img src="res/launchoptions.jpg" class="img-responsive" style="margin: 0 auto" alt="Video Settings:" /></a>*@
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="kontakt">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Kontakt</h2>
+                <hr class="primary">
+                <br />
+            </div>
+            <div class="col-lg-6 text-center">
+                <h3 class="section-heading">Tue Runge Pedersen</h3>
+                <p>Spørgsmål og andre generelle henvendelser omkring JYLAN.</p>
+                <hr class="primary">
+                <table style="margin: 0 auto;">
                     <tr>
-                        <td><b>-freq 120</b></td>
-                        <td>Sets your hertz to 120. DONT HAVE THIS IF YOUR MONITOR DOESN'T SUPPORT IT.</td>
+                        <td style="text-align: left;">
+                            <i class="fa fa-1x fa-envelope-o wow bounceIn text-primary" data-wow-delay="1s"></i>
+                            <strong>Email</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <a href="mailto:tuerunge@gmail.com" target="_blank" class="zocial email">tuerunge@gmail.com</a><br />
+                        </td>
                     </tr>
                     <tr>
-                        <td><b>-high</b></td>
-                        <td>Sets Counter-Strike to high priority.</td>
+                        <td style="text-align: left;">
+                            <i class="fa fa-1x fa-phone wow bounceIn text-primary" data-wow-delay="1s"></i>
+                            <strong>Telefon</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <a href="tel:+4527822428" target="_blank" class="zocial call">+45 2782 2428</a><br />
+                        </td>
                     </tr>
                     <tr>
-                        <td><b>-novid</b></td>
-                        <td>Remove's the intro video on game start.</td>
-                    </tr>
-                    <tr>
-                        <td><b>-console</b></td>
-                        <td>Enables console.</td>
+                        <td style="text-align: left;">
+                            <i class="fa fa-1x fa-facebook wow bounceIn text-primary" data-wow-delay="1s"></i>
+                            <strong>Facebook</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <a href="https://www.facebook.com/Tue.R.P" target="_blank" class="zocial facebook">Facebook</a>
+                        </td>
                     </tr>
                 </table>
-                <a href="http://csgohelp.com/launch-options/" target="_blank">Learn more about launch options here!</a>
             </div>
-        </div>
-    </div>
-</section>
-
-<section id="practice">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Practice</h2>
+            <div class="col-lg-6 text-center">
+                <h3 class="section-heading">Asger Friis Vestbjerg</h3>
+                <p>Henvendelser omkring hjemmesiden.</p>
                 <hr class="primary">
-                <p>Learn how to practice good flashes, smokes and other grenades.</p>
-                <img src="res/comingsoon.jpg" class="img-responsive" style="margin: 0 auto" alt="" />
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td style="text-align: left;">
+                            <i class="fa fa-1x fa-envelope-o wow bounceIn text-primary" data-wow-delay="2s"></i>
+                            <strong>Email</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <a href="mailto:asgerv@gmail.com" target="_blank" class="zocial email">asgerv@gmail.com</a><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            <i class="fa fa-1x fa-phone wow bounceIn text-primary" data-wow-delay="2s"></i>
+                            <strong>Telefon</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <a href="tel:+4525537429" target="_blank" class="zocial call">+45 2553 7429</a><br />
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
 </section>
-<aside class="bg-dark">
-    <div class="container text-center">
-        <div class="call-to-action">
-            <h2>asdasdsadasdads</h2>
-            <p>asdsasd lol asdkjasdskj ajdsa kdas</p>
-        </div>
-    </div>
-    <footer>
-        <p>
-            &copy; @DateTime.Now.Year - <a href="mailto:asgerv@gmail.com" target="_top">Asger Vestbjerg</a>
-        </p>
-    </footer>
-</aside>
-@*<script src="~/Scripts/creative.js"></script>**@
-<!-- Plugin JavaScript -->
-@*<script src="~/Scripts/jquery.easing.min.js"></script>
-    <script src="~/Scripts/jquery.fittext.js"></script>
-    <script src="~/Scripts/wow.min.js"></script>*@
-<!-- Custom Theme JavaScript -->

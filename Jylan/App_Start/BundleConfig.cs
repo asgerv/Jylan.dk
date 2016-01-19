@@ -22,21 +22,10 @@ namespace Jylan
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                "~/Scripts/bootstrap.min.js"
-                ));
-            //"~/Scripts/respond.js"
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                 "~/Scripts/jquery-ui-1.11.4.js",
                 "~/Scripts/jquery-ui-timepicker-addon.js",
-                "~/Scripts/jquery.countdown.js"
-                ));
-
-            bundles.Add(new ScriptBundle("~/bundles/pluginjs").Include(
-                "~/Scripts/jquery.easing.min.js",
-                "~/Scripts/jquery.fittext.js",
-                "~/Scripts/wow.min.js",
-                "~/Scripts/creative.js"
+                "~/Scripts/jquery.countdown2.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
@@ -47,7 +36,6 @@ namespace Jylan
                 "~/Content/bootstrap.min.css",
                 "~/Content/font-awesome/css/font-awesome.min.css",
                 "~/Content/animate.min.css",
-                //"~/Content/zocial.css"
                 "~/Content/creative.css"
                 ));
 
