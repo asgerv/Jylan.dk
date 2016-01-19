@@ -1,4 +1,12 @@
-﻿$(function() {
+﻿$('#clock').countdown($("#eventstartdate").val(), function (event) {
+    var $this = $(this).html(event.strftime(''
+      + '<span>%D</span> dage, '
+      + '<span>%H</span> timer, '
+      + '<span>%M</span> minutter, og '
+      + '<span>%S</span> sekunder'));
+});
+
+$(function () {
     $(".datepick").datetimepicker({
         showWeek: true,
         firstDay: 1,
@@ -10,7 +18,7 @@
     });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     var time = $("#timeleft").val();
     $("#counter").countdown({
         startTime: time,
@@ -19,7 +27,7 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     initialize();
 });
 
@@ -36,6 +44,6 @@ function initialize() {
     var marker = new google.maps.Marker({
         position: latlng,
         map: map,
-        title: "JYLAN @@ Lintrup Aktivitetscenter"
+        title: "JYLAN @ Lintrup Aktivitetscenter"
     });
 }
