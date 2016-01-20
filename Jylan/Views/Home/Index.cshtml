@@ -4,12 +4,6 @@
     // This is shit.
     var signupModel = new Signup();
 }
-@{
-    ViewBag.Title = "Forside";
-    var timeSpanLeft = @Model.StartDateTime - DateTime.Now;
-}
-
-<input id="timeleft" type="hidden" value="@timeSpanLeft.Days:@timeSpanLeft.Hours.ToString("00"):@timeSpanLeft.Minutes.ToString("00"):@timeSpanLeft.Seconds" />
 <input id="eventstartdate" type="hidden" value="@Model.StartDateTime.ToString("MM\'/'dd\'/'yyyy hh:mm:ss")" />
 
 <header>
@@ -77,9 +71,10 @@
                         </td>
                     </tr>
                 </table>
-                <br />
+                <br/>
                 <a href="@Url.Action("Create", "Signups")" class="btn btn-primary btn-xl wow bounceInLeft" data-wow-delay="1.5s">Tilmeld dig her</a>
-
+                <br/>
+                <br/>
             </div>
             <div class="col-lg-8 text-center">
                 <h3 class="section-heading">Tilmeldte</h3>
@@ -218,7 +213,7 @@
                             <strong>Email</strong>
                         </td>
                         <td style="text-align: right;">
-                            <a href="mailto:tuerunge@gmail.com" target="_blank" class="zocial email">tuerunge@gmail.com</a><br />
+                            <a href="mailto:tuerunge@gmail.com" target="_blank" class="zocial email">tuerunge@gmail.com</a><br/>
                         </td>
                     </tr>
                     <tr>
@@ -227,7 +222,7 @@
                             <strong>Telefon</strong>
                         </td>
                         <td style="text-align: right;">
-                            <a href="tel:+4527822428" target="_blank" class="zocial call">+45 2782 2428</a><br />
+                            <a href="tel:+4527822428" target="_blank" class="zocial call">+45 2782 2428</a><br/>
                         </td>
                     </tr>
                     <tr>
@@ -240,6 +235,7 @@
                         </td>
                     </tr>
                 </table>
+                <br/>
             </div>
             <div class="col-lg-6 text-center">
                 <h3 class="section-heading">Asger Friis Vestbjerg</h3>
@@ -252,7 +248,7 @@
                             <strong>Email</strong>
                         </td>
                         <td style="text-align: right;">
-                            <a href="mailto:asgerv@gmail.com" target="_blank" class="zocial email">asgerv@gmail.com</a><br />
+                            <a href="mailto:asgerv@gmail.com" target="_blank" class="zocial email">asgerv@gmail.com</a><br/>
                         </td>
                     </tr>
                     <tr>
@@ -261,10 +257,11 @@
                             <strong>Telefon</strong>
                         </td>
                         <td style="text-align: right;">
-                            <a href="tel:+4525537429" target="_blank" class="zocial call">+45 2553 7429</a><br />
+                            <a href="tel:+4525537429" target="_blank" class="zocial call">+45 2553 7429</a><br/>
                         </td>
                     </tr>
                 </table>
+                <br />
             </div>
         </div>
     </div>
