@@ -14,14 +14,7 @@ namespace Jylan.Controllers
         [Route("Begivenhed")]
         public ActionResult Index()
         {
-            var @event = db.Events.ToList().LastOrDefault();
-            if (@event == null)
-            {
-                // There should only be one Event.
-                // TODO: Create new empty Event if there is none.
-                return HttpNotFound();
-            }
-            return View(@event);
+            return View(db.Events.ToList());
         }
 
         [HttpPost]
