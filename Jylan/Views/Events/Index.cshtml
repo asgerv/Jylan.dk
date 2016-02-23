@@ -1,14 +1,9 @@
 ﻿@model IEnumerable<Jylan.Models.Event>
 
-@{
-    ViewBag.Title = "Administrator";
-}
 <div class="container body-content">
-    <h2>Administrator</h2>
-
-    <p>
-        @Html.ActionLink("Opret ny begivenhed", "Create")
-    </p>
+    <h2>Administrator Panel</h2>
+    <h4>Opret, slet eller rediger events. Tryk 'Rediger' for at se tilmeldinger til eventet.</h4>
+    <div>@Html.ActionLink("Opret ny begivenhed", "Create")</div>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <tr>
