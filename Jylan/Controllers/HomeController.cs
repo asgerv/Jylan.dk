@@ -13,6 +13,8 @@ namespace Jylan.Controllers
         public ActionResult Index()
         {
             var landingPageViewModel = db.Signups.ToLandingPageViewModel(db.Events.ToList().LastOrDefault());
+            //var landingPageViewModel2 = new LandingPageViewModel {EndDateTime = DateTime.Now.AddHours(2),
+            //    StartDateTime = DateTime.Now.AddHours(1), MaxSignups = 100, Name = "Jylan #5", Signups = new List<Signup>()};
 
             return View(landingPageViewModel);
         }
