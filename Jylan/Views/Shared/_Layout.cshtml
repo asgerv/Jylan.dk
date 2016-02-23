@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JYLAN - JYSK LAN PARTY" />
+    <meta name="description" content="JYLAN - JYSK LAN PARTY"/>
     <meta name="author" content="Asger Vestbjerg">
-    <meta name="google-site-verification" content="HRFi3cvp1Kk_Xuqw6HqQInH4eDGQA7AVTZHpnNyzngM" />
+    <meta name="google-site-verification" content="HRFi3cvp1Kk_Xuqw6HqQInH4eDGQA7AVTZHpnNyzngM"/>
     <meta name="keywords" content="lan, jysk, jylland, lanparty, counterstrike, csgo, counter strike global offensive, league of legends, lintrup, rødding, vejen">
     <title>JYLAN</title>
 
@@ -19,20 +19,20 @@
 </head>
 
 <body id="page-top">
-    
 
-    @RenderBody()
-    <hr />
-    <footer style="text-align: center">
-        <p>
-            &copy; @DateTime.Now.Year - <a href="mailto:asgerv@gmail.com" target="_top">Asger Vestbjerg</a>
-        </p>
-    </footer>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryui")
-    @Scripts.Render("~/bundles/scripts")
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGOY7ScRmGjLtW0DulPw-PcVZwjyDBYBU"></script>
-    @RenderSection("scripts", false)
+@RenderBody()
+<hr/>
+<footer style="text-align: center">
+    <p>
+        &copy; @DateTime.Now.Year - <a href="mailto:asgerv@gmail.com" target="_top">Asger Vestbjerg</a>
+    </p>
+</footer>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")
+@Scripts.Render("~/bundles/scripts")
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGOY7ScRmGjLtW0DulPw-PcVZwjyDBYBU"></script>
+@RenderSection("scripts", false)
 </body>
 </html>
