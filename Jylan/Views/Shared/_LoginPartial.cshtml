@@ -1,10 +1,14 @@
 ﻿@if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new {id = "logoutForm", @class = "navbar-right"}))
+    @Html.AntiForgeryToken()
+    <li>@Html.ActionLink("Admin", "Index", "Events")</li>
+
+
+    @*using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
 
-        @*<ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
             <li>
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     Administrer
@@ -22,8 +26,8 @@
             <li>
                 <a href="javascript:document.getElementById('logoutForm').submit()">Log ud</a>
             </li>
-        </ul>*@
-    }
+        </ul>
+    }*@
 }
 else
 {
