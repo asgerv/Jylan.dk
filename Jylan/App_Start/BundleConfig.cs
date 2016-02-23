@@ -8,7 +8,6 @@ namespace Jylan
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                "~/Scripts/jquery-2.2.0js",
                 "~/Scripts/jquery-2.2.0.min.js",
                 "~/Scripts/bootstrap.min.js",
                 "~/Scripts/jquery.easing.min.js",

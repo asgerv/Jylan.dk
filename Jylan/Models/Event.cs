@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Jylan.Models
@@ -33,7 +32,8 @@ namespace Jylan.Models
         [Range(0, 999, ErrorMessage = "Ukorrekt antal indtastet. (0-999)")]
         public int MaxSignups { get; set; }
 
-        //public List<Signup> Signups { get; set; }
         //public string CompetitionInfo { get; set; }
+
+        //public List<Signup> Signups { get; set; }
     }
 }
