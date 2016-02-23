@@ -33,6 +33,6 @@ namespace Jylan.Models
         [Range(0, 999, ErrorMessage = "Ukorrekt antal indtastet. (0-999)")]
         public int MaxSignups { get; set; }
 
-        public List<Signup> Signups { get; set; }
+        public virtual List<Signup> Signups { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace Jylan.Controllers
         private readonly JylanContext db = new JylanContext();
         // GET: Events
         [Authorize(Roles = "Admin")]
-        [Route("Begivenhed")]
+        [Route("AdminPanel")]
         public ActionResult Index()
         {
             return View(db.Events.ToList());
@@ -20,7 +20,7 @@ namespace Jylan.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        [Route("Begivenhed")]
+        [Route("AdminPanel")]
         public ActionResult Index(
             [Bind(Include = "EventId,Name,StartDateTime,EndDateTime,Price,MaxSignups")] Event @event)
         {
