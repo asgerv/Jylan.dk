@@ -254,3 +254,4 @@ E:\Github\Jylan.dk\Jylan\obj\Release\Jylan.Migrations.eventUpdateVirtual.resourc
 E:\Github\Jylan.dk\Jylan\obj\Release\Jylan.csproj.GenerateResource.Cache
 E:\Github\Jylan.dk\Jylan\obj\Release\Jylan.dll
 E:\Github\Jylan.dk\Jylan\obj\Release\Jylan.pdb
+E:\Github\Jylan.dk\Jylan\bin\WebActivatorEx.dll
