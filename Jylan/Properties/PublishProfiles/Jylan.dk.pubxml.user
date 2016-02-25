@@ -29,7 +29,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2016 13:53:28</publishTime>
     </File>
     <File Include="bin/Jylan.dll">
-      <publishTime>02/25/2016 17:08:45</publishTime>
+      <publishTime>02/25/2016 18:46:40</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>02/25/2016 15:52:15</publishTime>
@@ -434,7 +434,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>02/25/2016 17:06:34</publishTime>
+      <publishTime>02/25/2016 17:17:12</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>01/15/2016 20:35:12</publishTime>
@@ -773,7 +773,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2015 12:20:34</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>02/25/2016 17:08:40</publishTime>
+      <publishTime>02/25/2016 18:46:07</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>02/23/2016 14:35:06</publishTime>
@@ -806,7 +806,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2015 12:20:34</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/25/2016 17:09:19</publishTime>
+      <publishTime>02/25/2016 18:46:55</publishTime>
     </File>
   </ItemGroup>
 </Project>

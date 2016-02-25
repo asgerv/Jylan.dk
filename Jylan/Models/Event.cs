@@ -13,11 +13,13 @@ namespace Jylan.Models
         public string Name { get; set; }
 
         [Required]
+        [UIHint("DateTimeText")]
         [Display(Name = "Start tidspunkt")]
         [DataType(DataType.DateTime)]
         public DateTime StartDateTime { get; set; }
 
         [Required]
+        [UIHint("DateTimeText")]
         [Display(Name = "Slut tidspunkt")]
         [DataType(DataType.DateTime)]
         public DateTime EndDateTime { get; set; }
