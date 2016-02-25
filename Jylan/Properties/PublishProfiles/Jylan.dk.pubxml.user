@@ -20,7 +20,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>06/04/2015 12:20:35</publishTime>
+      <publishTime>02/25/2016 15:52:03</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>02/23/2016 13:53:28</publishTime>
@@ -29,55 +29,55 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2016 13:53:28</publishTime>
     </File>
     <File Include="bin/Jylan.dll">
-      <publishTime>02/25/2016 15:33:03</publishTime>
+      <publishTime>02/25/2016 15:53:17</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
-      <publishTime>06/04/2015 12:20:36</publishTime>
+      <publishTime>02/25/2016 15:52:15</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
-      <publishTime>06/04/2015 12:20:36</publishTime>
+      <publishTime>02/25/2016 15:52:16</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
-      <publishTime>06/04/2015 12:20:36</publishTime>
+      <publishTime>02/25/2016 15:52:50</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
-      <publishTime>06/04/2015 12:20:36</publishTime>
+      <publishTime>02/25/2016 15:52:36</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
-      <publishTime>06/04/2015 12:20:36</publishTime>
+      <publishTime>02/25/2016 15:52:38</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
-      <publishTime>06/04/2015 12:20:37</publishTime>
+      <publishTime>02/25/2016 15:52:41</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.dll">
-      <publishTime>06/04/2015 12:20:37</publishTime>
+      <publishTime>02/25/2016 15:52:39</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
-      <publishTime>06/04/2015 12:20:37</publishTime>
+      <publishTime>02/25/2016 15:52:42</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Google.dll">
-      <publishTime>06/04/2015 12:20:37</publishTime>
+      <publishTime>02/25/2016 15:52:44</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
-      <publishTime>06/04/2015 12:20:37</publishTime>
+      <publishTime>02/25/2016 15:52:46</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
-      <publishTime>06/04/2015 12:20:37</publishTime>
+      <publishTime>02/25/2016 15:52:48</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
-      <publishTime>06/04/2015 12:20:37</publishTime>
+      <publishTime>02/25/2016 15:52:52</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>06/04/2015 12:20:37</publishTime>
     </File>
     <File Include="bin/MySql.Data.dll">
-      <publishTime>06/04/2015 12:20:37</publishTime>
+      <publishTime>02/25/2016 15:52:30</publishTime>
     </File>
     <File Include="bin/MySql.Data.Entity.EF6.dll">
-      <publishTime>06/04/2015 12:20:37</publishTime>
+      <publishTime>02/25/2016 15:52:31</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>06/04/2015 12:20:37</publishTime>
+      <publishTime>02/25/2016 15:52:34</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>06/04/2015 12:20:37</publishTime>
@@ -89,31 +89,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/26/2012 03:16:08</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>06/04/2015 12:20:36</publishTime>
+      <publishTime>02/25/2016 15:52:21</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>06/04/2015 12:20:36</publishTime>
+      <publishTime>02/25/2016 15:52:26</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
       <publishTime>06/04/2015 12:20:36</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>06/04/2015 12:20:36</publishTime>
+      <publishTime>02/25/2016 15:52:18</publishTime>
     </File>
     <File Include="bin/System.Web.Routing.dll">
       <publishTime>09/26/2012 03:16:08</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>06/04/2015 12:20:36</publishTime>
+      <publishTime>02/25/2016 15:52:21</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>06/04/2015 12:20:36</publishTime>
+      <publishTime>02/25/2016 15:52:22</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>06/04/2015 12:20:36</publishTime>
+      <publishTime>02/25/2016 15:52:22</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>06/04/2015 12:20:37</publishTime>
+      <publishTime>02/25/2016 15:52:55</publishTime>
     </File>
     <File Include="Content/animate.min.css">
       <publishTime>02/23/2016 00:36:47</publishTime>
@@ -260,10 +260,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2015 12:20:33</publishTime>
     </File>
     <File Include="Content/jquery-ui-timepicker-addon.css">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:08</publishTime>
     </File>
     <File Include="Content/jquery-ui-timepicker-addon.min.css">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:08</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>02/23/2016 21:36:06</publishTime>
@@ -410,7 +410,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>02/23/2016 21:36:07</publishTime>
+      <publishTime>02/25/2016 15:52:56</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>01/15/2016 20:35:12</publishTime>
@@ -428,133 +428,136 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2016 21:36:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-addon-i18n.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:08</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-addon-i18n.min.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:08</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-af.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:08</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-am.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:08</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-bg.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:08</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-ca.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:08</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-cs.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:08</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-da.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:08</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-de.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:08</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-el.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-es.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-et.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-eu.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/i18n/jquery-ui-timepicker-fa.js">
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-fi.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-fr.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-gl.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-he.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-hr.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-hu.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-id.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-it.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-ja.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-ko.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-lt.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-lv.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-nl.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-no.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-pl.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-pt-BR.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-pt.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-ro.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-ru.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-sk.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-sl.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-sr-RS.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-sr-YU.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-sv.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-th.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-tr.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:07</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-uk.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:06</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-vi.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:06</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-zh-CN.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:06</publishTime>
     </File>
     <File Include="Scripts/i18n/jquery-ui-timepicker-zh-TW.js">
-      <publishTime>06/04/2015 12:20:33</publishTime>
+      <publishTime>02/25/2016 15:52:06</publishTime>
     </File>
     <File Include="Scripts/jquery-2.1.3.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -584,13 +587,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2015 12:20:34</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-sliderAccess.js">
-      <publishTime>06/04/2015 12:20:34</publishTime>
+      <publishTime>02/25/2016 15:52:06</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-timepicker-addon.js">
-      <publishTime>06/04/2015 12:20:34</publishTime>
+      <publishTime>02/25/2016 15:52:06</publishTime>
     </File>
     <File Include="Scripts/jquery-ui-timepicker-addon.min.js">
-      <publishTime>06/04/2015 12:20:34</publishTime>
+      <publishTime>02/25/2016 15:52:06</publishTime>
     </File>
     <File Include="Scripts/jquery.countdown.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -605,31 +608,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2016 21:36:07</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.js">
-      <publishTime>06/04/2015 12:20:34</publishTime>
+      <publishTime>02/25/2016 15:52:14</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.min.js">
-      <publishTime>06/04/2015 12:20:34</publishTime>
+      <publishTime>02/25/2016 15:52:14</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.min.js.map">
       <publishTime>06/04/2015 12:20:34</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.js">
-      <publishTime>06/04/2015 12:20:34</publishTime>
+      <publishTime>02/25/2016 15:52:19</publishTime>
     </File>
     <File Include="Scripts/jquery.validate.unobtrusive.min.js">
-      <publishTime>06/04/2015 12:20:34</publishTime>
+      <publishTime>02/25/2016 15:52:19</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.6.2.js">
       <publishTime>06/04/2015 12:20:34</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>02/25/2016 15:52:28</publishTime>
     </File>
     <File Include="Scripts/myscripts.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/respond.js">
-      <publishTime>06/04/2015 12:20:34</publishTime>
+      <publishTime>02/25/2016 15:52:54</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.js">
+      <publishTime>02/25/2016 15:52:54</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.min.js">
+      <publishTime>02/25/2016 15:52:54</publishTime>
     </File>
     <File Include="Scripts/respond.min.js">
-      <publishTime>06/04/2015 12:20:34</publishTime>
+      <publishTime>02/25/2016 15:52:54</publishTime>
     </File>
     <File Include="Scripts/scripts.js">
       <publishTime>02/22/2016 23:16:15</publishTime>
@@ -638,7 +650,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2016 00:32:43</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>02/23/2016 21:36:07</publishTime>
+      <publishTime>02/25/2016 15:52:54</publishTime>
     </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>06/04/2015 12:20:34</publishTime>
@@ -656,7 +668,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2015 12:20:34</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>02/23/2016 21:41:46</publishTime>
+      <publishTime>02/25/2016 16:23:43</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
       <publishTime>02/23/2016 21:36:07</publishTime>
@@ -677,19 +689,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2016 21:36:07</publishTime>
     </File>
     <File Include="Views/Events/Create.cshtml">
-      <publishTime>02/23/2016 21:36:07</publishTime>
+      <publishTime>02/25/2016 16:06:39</publishTime>
     </File>
     <File Include="Views/Events/Delete.cshtml">
-      <publishTime>02/23/2016 21:36:07</publishTime>
+      <publishTime>02/25/2016 16:07:27</publishTime>
     </File>
     <File Include="Views/Events/Details.cshtml">
       <publishTime>02/23/2016 21:36:07</publishTime>
     </File>
     <File Include="Views/Events/Edit.cshtml">
-      <publishTime>02/23/2016 21:36:32</publishTime>
+      <publishTime>02/25/2016 16:04:55</publishTime>
     </File>
     <File Include="Views/Events/Index.cshtml">
-      <publishTime>02/23/2016 21:50:35</publishTime>
+      <publishTime>02/25/2016 16:14:49</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>02/22/2016 23:16:15</publishTime>
@@ -698,7 +710,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/26/2015 15:24:02</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>02/23/2016 21:36:32</publishTime>
+      <publishTime>02/25/2016 16:52:22</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>02/23/2016 21:36:07</publishTime>
@@ -737,7 +749,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2015 12:20:34</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>02/23/2016 21:36:32</publishTime>
+      <publishTime>02/25/2016 16:30:30</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>02/23/2016 14:35:06</publishTime>
@@ -755,7 +767,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/23/2016 21:36:07</publishTime>
     </File>
     <File Include="Views/Signups/Edit.cshtml">
-      <publishTime>02/23/2016 20:36:46</publishTime>
+      <publishTime>02/25/2016 16:13:20</publishTime>
     </File>
     <File Include="Views/Signups/Index.cshtml">
       <publishTime>02/23/2016 21:36:07</publishTime>
@@ -770,7 +782,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2015 12:20:34</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/25/2016 15:36:10</publishTime>
+      <publishTime>02/25/2016 16:25:41</publishTime>
     </File>
   </ItemGroup>
 </Project>
