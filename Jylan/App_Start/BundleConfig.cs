@@ -10,7 +10,6 @@ namespace Jylan
             // Trying to make font-awesome icons work
             //BundleTable.EnableOptimizations = true;
 
-
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/jquery-2.2.0.min.js",
                 "~/Scripts/bootstrap.min.js",
