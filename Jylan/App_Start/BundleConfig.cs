@@ -8,7 +8,7 @@ namespace Jylan
         public static void RegisterBundles(BundleCollection bundles)
         {
             // Trying to make font-awesome icons work
-            //BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/jquery-2.2.0.min.js",
@@ -33,10 +33,11 @@ namespace Jylan
             bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
                 "~/Scripts/scripts.js"
                 ));
-
+            bundles.Add(new StyleBundle("~/Content/fontawesomebundle").Include(
+                "~/Content/font-awesome/css/font-awesome.css"
+                ));
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.min.css",
-                "~/Content/font-awesome/css/font-awesome.css",
                 "~/Content/animate.min.css",
                 "~/Content/creative.css"
                 ));
