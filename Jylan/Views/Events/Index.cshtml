@@ -2,8 +2,12 @@
 
 <div class="container body-content">
     <h2>Administrator Panel</h2>
+    <i class="fa fa-arrow-left"></i>
+    <div class="btn btn-link">@Html.ActionLink("Tilbage til forsiden", "Index", "Home")</div>
+    <br />
+    <i class="fa fa-plus"></i>
+    <div class="btn btn-link">@Html.ActionLink("Opret ny begivenhed", "Create")</div>
     <h4>Opret, slet eller rediger events. Tryk 'Rediger' for at se tilmeldinger til eventet.</h4>
-    <div>@Html.ActionLink("Opret ny begivenhed", "Create")</div>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <tr>
@@ -40,8 +44,8 @@
                         @Html.DisplayFor(modelItem => item.Price)
                     </td>
                     <td>
-                        @Html.ActionLink("Rediger", "Edit", new {id = item.EventId}) |
-                        @Html.ActionLink("Slet", "Delete", new {id = item.EventId})
+                        @Html.ActionLink("Rediger", "Edit", new { id = item.EventId }) |
+                        @Html.ActionLink("Slet", "Delete", new { id = item.EventId })
                     </td>
                 </tr>
             }
