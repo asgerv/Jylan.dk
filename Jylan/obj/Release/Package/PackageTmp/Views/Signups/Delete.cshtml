@@ -4,7 +4,7 @@
     ViewBag.Title = "Slet";
 }
 
-<h2>Slet</h2>
+<h2>Slet tilmelding</h2>
 
 <h3>Er du sikker på du vil slette denne tilmelding?</h3>
 <div>
@@ -63,7 +63,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Slet tilmelding" class="btn btn-default"/> |
+            <input type="submit" value="Slet tilmelding" class="btn btn-danger"/> |
             @Html.ActionLink("Tilbage til listen", "Index")
         </div>
     }

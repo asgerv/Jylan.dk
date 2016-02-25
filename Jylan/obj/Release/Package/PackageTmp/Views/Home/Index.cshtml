@@ -1,120 +1,313 @@
 ﻿@using Jylan.Models
-@model LandingPageViewModel
+@model Jylan.Models.Event
 @{
     // This is shit.
     var signupModel = new Signup();
 }
-@{
-    ViewBag.Title = "Forside";
-    var timeSpanLeft = @Model.StartDateTime - DateTime.Now;
-}
-
-<input id="timeleft" type="hidden" value="@timeSpanLeft.Days:@timeSpanLeft.Hours.ToString("00"):@timeSpanLeft.Minutes.ToString("00"):@timeSpanLeft.Seconds" />
-
-<div class="jumbotron">
-    <h1>JYLAN</h1>
-    <p class="lead">Jysk lan party - Information og tilmelding</p>
-    <p class="hidden-xs">Næste LAN starter om</p>
-    <div id="counter" class="hidden-xs" style="font-size: 54px;"></div>
-    @if (timeSpanLeft.Days > 99)
-    {
-        <div class="desc100 hidden-xs">
-            <div>Dage</div>
+<input id="eventstartdate" type="hidden" value="@Model.StartDateTime.ToString("MM\'/'dd\'/'yyyy hh:mm:ss")"/>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @* ReSharper disable once Html.IdNotResolved *@
+            <a class="navbar-brand page-scroll" href="#page-top">JYLAN</a>
         </div>
-    }
-    else
-    {
-        <div class="desc hidden-xs">
-            <div>Dage</div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#events">Events</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#information">Information</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#konkurrencer">Konkurrencer</a>
+                </li>
+
+
+                <li>
+                    <a class="page-scroll" href="#kontakt">Kontakt</a>
+                </li>
+                @Html.Partial("_LoginPartial")
+            </ul>
         </div>
-    }
-    <div class="desc hidden-xs">
-        <div>Timer</div>
-        <div>Minutter</div>
-        <div>Sekunder</div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-md-3">
-        <h2>@Model.Name</h2>
-        <table style="width: 100%;">
-            <tr>
-                <td>
-                    <strong>Tilmeldte:</strong>
-                </td>
-                <td style="text-align: right;">
-                    <span>@Model.Signups.Count()</span>
-                    /
-                    <span>@Model.MaxSignups</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Pris:</strong>
-                </td>
-                <td style="text-align: right;">
-                    <span>@Model.Price kr.</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Start:</strong>
-                </td>
-                <td style="text-align: right;">
-                    <span>@Html.DisplayFor(model => model.StartDateTime)</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <strong>Slut:</strong>
-                </td>
-                <td style="text-align: right;">
-                    <span>@Html.DisplayFor(model => model.EndDateTime)</span>
-                </td>
-            </tr>
-        </table>
-        <br />
-        <a href="@Url.Action("Create", "Signups")" class="btn btn-info btn-lg">Tilmeld dig her &raquo;</a>
+</nav>
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>JYLAN</h1>
+            <hr>
+            <p>Lokalt LAN party i Lintrup - Information og tilmelding</p>
+            <p class="hidden-xs">Næste LAN starter om</p>
+            <div id="clock" style="font-size: 35px;"></div><br/>
+            <a href="#events" class="btn btn-primary btn-xl page-scroll">Se mere</a>
+        </div>
     </div>
-    <div class="col-md-9">
-        <h2>Tilmeldte </h2>
-        <div class="table-responsive">
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => signupModel.FirstName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => signupModel.LastName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => signupModel.Nick)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => signupModel.HasPayed)
-                    </th>
-                    <th></th>
-                </tr>
-
-                @foreach (var item in Model.Signups)
-                {
+</header>
+<section class="bg-dark" id="events">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Events</h2>
+                <hr class="light">
+                <p>
+                    Her kan du finde information og tilmelding til det næste JYLAN.<br/>
+                    For at gennemse tidligere events, kan du <a href="#">klikke her.</a>
+                </p>
+                <br/>
+            </div>
+            <div class="col-lg-4 text-center">
+                <h3 class="section-heading wow bounceInLeft" data-wow-delay="0.5s">@Model.Name</h3>
+                <hr class="light wow bounceInLeft" data-wow-delay=".8s">
+                <table class="wow bounceInLeft" data-wow-delay="1.1s" style="margin: 0 auto;">
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.FirstName)
+                        <td style="text-align: left;">
+                            <strong>Tilmeldte:</strong>
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.LastName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Nick)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.HasPayed)
+                        <td style="text-align: right;">
+                            @if (@Model.Signups != null)
+                            {
+                                <span>@Model.Signups.Count()</span>
+                            }
+                            else
+                            {
+                                <span>0</span>
+                            }
+                            /
+                            <span>@Model.MaxSignups</span>
                         </td>
                     </tr>
-                }
-            </table>
+                    <tr>
+                        <td style="text-align: left;">
+                            <strong>Pris:</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <span>@Model.Price kr.</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            <strong>Start:</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <span>@Html.DisplayFor(model => model.StartDateTime)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            <strong>Slut:</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <span>@Html.DisplayFor(model => model.EndDateTime)</span>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                <a href="@Url.Action("Create", "Signups")" class="btn btn-primary btn-xl wow bounceInLeft" data-wow-delay="1.5s">Tilmeld dig her</a>
+                <br/>
+                <br/>
+            </div>
+            <div class="col-lg-8 text-center">
+                <h3 class="section-heading">Tilmeldte</h3>
+
+                <hr class="light">
+                <div class="table-responsive">
+                    <table class="table" style="text-align: left;">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => signupModel.FirstName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => signupModel.LastName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => signupModel.Nick)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => signupModel.HasPayed)
+                            </th>
+                            <th></th>
+                        </tr>
+                        @if (@Model.Signups != null)
+                        {
+                            foreach (var item in Model.Signups)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FirstName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nick)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HasPayed)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
+<section id="information">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Information</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-info-circle wow bounceIn text-primary" data-wow-delay=".5s" style="animation-delay: 0.5s; animation-name: bounceIn; visibility: visible;"></i>
+                    <p class="text-muted">
+                    </p>
+                    <h3>Generelt</h3>
+                    <p class="text-muted">Der vil være mulighed for benyttelse af køkkenfaciliteter, heriblandt køleskab, fryser, ovn, kogeplade og andet udstyr. Der er også mulighed for madlevering.</p>
+                    <br><strong>Medbring:</strong><br>
+                    <p class="text-muted">
+                        LAN-kabel på min. 5 meter,
+                        Stikdåse,
+                        PC,
+                        Skærm,
+                        Mus,
+                        Musemåtte,
+                        Tastatur
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-dollar wow bounceIn text-primary" data-wow-delay="1s" style="animation-delay: 1s; animation-name: bounceIn; visibility: visible;"></i>
+                    <h3>Betaling</h3>
+                    <p class="text-muted">
+                        <b>Pris: kr.</b>
+                    </p>
+                    <p class="text-muted">
+                        <strong>HUSK: </strong>Skriv din e-mailadresse i beskedfeltet ved overførsel, så vi kan se det er dig, der har betalt.
+                    </p><br>
+                    <b style="font-size: 110%">MobilePay</b><br>
+                    27 82 24 28<br><br>
+                    <b style="font-size: 110%">Bankoverførsel</b><br>
+                    Reg. nr: 9740<br>
+                    Konto nr: 8875645901<br><br>
+                    <b style="font-size: 110%">Kontant</b><br>
+                    Du kan vælge at betale kontant ved ankomst.<br>
+                </div>
+            </div>
+            <div class="col-lg-12 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-map-marker wow bounceIn text-primary" data-wow-delay="1s" style="animation-delay: 1s; animation-name: bounceIn; visibility: visible;"></i>
+                    <h3>Lokation</h3>
+                    <p>
+                        Lintrup Aktivitetscenter<br>Kirkepladsen 1, 6660 Lintrup
+                    </p>
+                    <div id="map_canvas" style="display: block; height: 500px; width: auto;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-dark" id="konkurrencer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Konkurrencer</h2>
+                <hr class="light">
+                <p class="text-faded">Her kan du lære mere om hvilke konkurrencer der vil finde sted til JYLAN.</p>
+                <p class="text-faded">Tag kontakt til Tue hvis du har idéer.</p>
+                <i class="fa fa-4x fa-trophy wow bounceIn text-primary" data-wow-delay="1s"></i>
+                @*<a href="res/launchoptions.jpg"><img src="res/launchoptions.jpg" class="img-responsive" style="margin: 0 auto" alt="Video Settings:" /></a>*@
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="kontakt">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Kontakt</h2>
+                <hr class="primary">
+                <br/>
+            </div>
+            <div class="col-lg-6 text-center">
+                <h3 class="section-heading">Tue Runge Pedersen</h3>
+                <p>Spørgsmål og andre generelle henvendelser omkring JYLAN.</p>
+                <hr class="primary">
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td style="text-align: left;">
+                            <i class="fa fa-1x fa-envelope-o wow bounceIn text-primary" data-wow-delay="1s"></i>
+                            <strong>Email</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <a href="mailto:tuerunge@gmail.com" target="_blank" class="zocial email">tuerunge@gmail.com</a><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            <i class="fa fa-1x fa-phone wow bounceIn text-primary" data-wow-delay="1s"></i>
+                            <strong>Telefon</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <a href="tel:+4527822428" target="_blank" class="zocial call">+45 2782 2428</a><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            <i class="fa fa-1x fa-facebook wow bounceIn text-primary" data-wow-delay="1s"></i>
+                            <strong>Facebook</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <a href="https://www.facebook.com/Tue.R.P" target="_blank" class="zocial facebook">Facebook</a>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+            </div>
+            <div class="col-lg-6 text-center">
+                <h3 class="section-heading">Asger Friis Vestbjerg</h3>
+                <p>Henvendelser omkring hjemmesiden.</p>
+                <hr class="primary">
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td style="text-align: left;">
+                            <i class="fa fa-1x fa-envelope-o wow bounceIn text-primary" data-wow-delay="2s"></i>
+                            <strong>Email</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <a href="mailto:asgerv@gmail.com" target="_blank" class="zocial email">asgerv@gmail.com</a><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            <i class="fa fa-1x fa-phone wow bounceIn text-primary" data-wow-delay="2s"></i>
+                            <strong>Telefon</strong>
+                        </td>
+                        <td style="text-align: right;">
+                            <a href="tel:+4525537429" target="_blank" class="zocial call">+45 2553 7429</a><br/>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+            </div>
+        </div>
+    </div>
+</section>
