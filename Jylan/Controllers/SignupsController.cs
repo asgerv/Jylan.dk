@@ -53,11 +53,9 @@ namespace Jylan.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Signups.Add(signup);
+                var currentEvent = db.Events.OrderBy(e => e.StartDateTime).FirstOrDefault();
+                currentEvent.Signups.Add(signup);
                 db.SaveChanges();
-
-                var currentEvent = db.Events.ToList().LastOrDefault();
-
                 var client = new SmtpClient();
                 var mailMessage = new MailMessage();
                 mailMessage.From = new MailAddress("noreply@jylan.dk", "JYLAN", Encoding.UTF8);
@@ -88,7 +86,12 @@ namespace Jylan.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var signup = db.Signups.Find(id);
+            var currentEvent = db.Events.OrderBy(e => e.StartDateTime).FirstOrDefault();
+            if (currentEvent == null)
+            {
+                return HttpNotFound();
+            }
+            var signup = currentEvent.Signups.FirstOrDefault(s => s.SignupId == id);
             if (signup == null)
             {
                 return HttpNotFound();
@@ -110,7 +113,7 @@ namespace Jylan.Controllers
             {
                 db.Entry(signup).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Events");
             }
             return View(signup);
         }
@@ -124,7 +127,10 @@ namespace Jylan.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var signup = db.Signups.Find(id);
+            var currentEvent = db.Events.OrderBy(e => e.StartDateTime).FirstOrDefault();
+            if (currentEvent == null)
+                return HttpNotFound();
+            var signup = currentEvent.Signups.FirstOrDefault(s => s.SignupId == id);
             if (signup == null)
             {
                 return HttpNotFound();
@@ -139,16 +145,17 @@ namespace Jylan.Controllers
         [Route("Tilmeldinger/Slet/{id:int}")]
         public ActionResult DeleteConfirmed(int id)
         {
-            var signup = db.Signups.Find(id);
-            db.Signups.Remove(signup);
+            var currentEvent = db.Events.OrderBy(e => e.StartDateTime).FirstOrDefault();
+            var signup = currentEvent.Signups.FirstOrDefault(s => s.SignupId == id);
+            currentEvent.Signups.Remove(signup);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Events");
         }
 
         // Custom control for custom view
         public ActionResult SignupComplete(Signup signup)
         {
-            var currentEvent = db.Events.ToList().LastOrDefault();
+            var currentEvent = db.Events.OrderBy(e => e.StartDateTime).FirstOrDefault();
             ViewBag.EventPrice = 0;
             if (currentEvent != null) ViewBag.EventPrice = currentEvent.Price;
             return View(signup);
