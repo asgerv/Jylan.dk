@@ -208,6 +208,14 @@
     <Compile Include="Migrations\201504280318430_events-modelupdate.Designer.cs">
       <DependentUpon>201504280318430_events-modelupdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602231710396_eventUpdate.cs" />
+    <Compile Include="Migrations\201602231710396_eventUpdate.Designer.cs">
+      <DependentUpon>201602231710396_eventUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602231922151_eventUpdateVirtual.cs" />
+    <Compile Include="Migrations\201602231922151_eventUpdateVirtual.Designer.cs">
+      <DependentUpon>201602231922151_eventUpdateVirtual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
@@ -270,7 +278,6 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\zocial.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
@@ -307,10 +314,6 @@
     <Content Include="Content\font-awesome\scss\_rotated-flipped.scss" />
     <Content Include="Content\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\font-awesome\scss\_variables.scss" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
@@ -464,6 +467,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504280318430_events-modelupdate.resx">
       <DependentUpon>201504280318430_events-modelupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602231710396_eventUpdate.resx">
+      <DependentUpon>201602231710396_eventUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602231922151_eventUpdateVirtual.resx">
+      <DependentUpon>201602231922151_eventUpdateVirtual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

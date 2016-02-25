@@ -1,72 +1,129 @@
-﻿@model Jylan.Models.Event
-
+﻿@using Jylan.Models
+@model Jylan.Models.Event
 @{
-    ViewBag.Title = "Edit";
+    // This is shit.
+    var signupModel = new Signup();
 }
-
-<h2>Edit</h2>
-
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>Event</h4>
-        <hr/>
-        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
-        @Html.HiddenFor(model => model.EventId)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.StartDateTime, new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.StartDateTime, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.StartDateTime, "", new {@class = "text-danger"})
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EndDateTime, new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EndDateTime, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.EndDateTime, "", new {@class = "text-danger"})
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Price, new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Price, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.Price, "", new {@class = "text-danger"})
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MaxSignups, new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MaxSignups, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.MaxSignups, "", new {@class = "text-danger"})
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default"/>
-            </div>
-        </div>
+<div class="container body-content">
+    <h2>Rediger event</h2>
+    <div>
+        @Html.ActionLink("Tilbage til oversigten", "Index")
     </div>
-}
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+            @Html.HiddenFor(model => model.EventId)
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.StartDateTime, new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.StartDateTime, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.StartDateTime, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EndDateTime, new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EndDateTime, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.EndDateTime, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Price, new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Price, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Price, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.MaxSignups, new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MaxSignups, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.MaxSignups, "", new {@class = "text-danger"})
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-success"/>
+                </div>
+            </div>
+        </div>
+    }
+    <h3>Tilmeldinger</h3>
+
+    <p>
+        @Html.ActionLink("Opret ny", "Create", "Signups")
+    </p>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => signupModel.EmailAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => signupModel.Nick)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => signupModel.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => signupModel.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => signupModel.PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => signupModel.HasPayed)
+                </th>
+                <th>
+                    Kontrol
+                </th>
+            </tr>
+            @if (Model.Signups != null)
+            {
+                foreach (var item in Model.Signups)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmailAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nick)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HasPayed)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Rediger", "Edit", "Signups", new {id = item.SignupId}, null) |
+                            @Html.ActionLink("Slet", "Delete", "Signups", new {id = item.SignupId}, null)
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
 </div>
 
 @section Scripts {
