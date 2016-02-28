@@ -4,7 +4,11 @@
     // This is shit.
     var signupModel = new Signup();
 }
-<input id="eventstartdate" type="hidden" value="@Model.StartDateTime.ToString("MM\'/'dd\'/'yyyy hh:mm:ss")"/>
+<input id="eventstartdate" type="hidden" value="@Model.StartDateTime.ToString("MM\'/'dd\'/'yyyy hh:mm:ss")" />
+
+
+<!-- #region navbar -->
+
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -39,6 +43,9 @@
         </div>
     </div>
 </nav>
+<!-- #endregion-->
+<!-- #region header -->
+
 <header>
     <div class="header-content">
         <div class="header-content-inner">
@@ -46,11 +53,14 @@
             <hr>
             <p>Lokalt LAN party i Lintrup - Information og tilmelding</p>
             <p class="hidden-xs">Næste LAN starter om</p>
-            <div id="clock" style="font-size: 35px;"></div><br/>
+            <div id="clock" style="font-size: 35px;"></div><br />
             <a href="#events" class="btn btn-primary btn-xl page-scroll">Se mere</a>
         </div>
     </div>
 </header>
+<!-- #endregion-->
+<!-- #region Events -->
+
 <section class="bg-dark" id="events">
     <div class="container">
         <div class="row">
@@ -58,10 +68,10 @@
                 <h2 class="section-heading">Events</h2>
                 <hr class="light">
                 <p>
-                    Her kan du finde information og tilmelding til det næste JYLAN.<br/>
+                    Her kan du finde information og tilmelding til det næste JYLAN.<br />
                     For at gennemse tidligere events, kan du <a href="#">klikke her.</a>
                 </p>
-                <br/>
+                <br />
             </div>
             <div class="col-lg-4 text-center">
                 <h3 class="section-heading wow bounceInLeft" data-wow-delay="0.5s">@Model.Name</h3>
@@ -109,10 +119,10 @@
                         </td>
                     </tr>
                 </table>
-                <br/>
+                <br />
                 <a href="@Url.Action("Create", "Signups")" class="btn btn-primary btn-xl wow bounceInLeft" data-wow-delay="1.5s">Tilmeld dig her</a>
-                <br/>
-                <br/>
+                <br />
+                <br />
             </div>
             <div class="col-lg-8 text-center">
                 <h3 class="section-heading">Tilmeldte</h3>
@@ -161,6 +171,9 @@
         </div>
     </div>
 </section>
+<!-- #endregion -->
+<!-- #region information-->
+
 <section id="information">
     <div class="container">
         <div class="row">
@@ -174,10 +187,10 @@
         <div class="row">
             <div class="col-md-6 text-center">
                 <div class="service-box">
-                    <i class="fa fa-4x fa-info-circle wow bounceIn text-primary" data-wow-delay=".5s" style="animation-delay: 0.5s; animation-name: bounceIn; visibility: visible;"></i>
+                    <i class="fa fa-4x fa-info-circle wow bounceIn text-primary text-center" data-wow-delay=".5s" style="animation-delay: 0.5s; animation-name: bounceIn; visibility: visible;"></i>
                     <p class="text-muted">
                     </p>
-                    <h3>Generelt</h3>
+                    <h3 class="text-center">Generelt</h3>
                     <p class="text-muted">Der vil være mulighed for benyttelse af køkkenfaciliteter, heriblandt køleskab, fryser, ovn, kogeplade og andet udstyr. Der er også mulighed for madlevering.</p>
                     <br><strong>Medbring:</strong><br>
                     <p class="text-muted">
@@ -194,9 +207,9 @@
             <div class="col-md-6 text-center">
                 <div class="service-box">
                     <i class="fa fa-4x fa-dollar wow bounceIn text-primary" data-wow-delay="1s" style="animation-delay: 1s; animation-name: bounceIn; visibility: visible;"></i>
-                    <h3>Betaling</h3>
+                    <h3 class="text-center">Betaling</h3>
                     <p class="text-muted">
-                        <b>Pris: kr.</b>
+                        <b>Pris: @Model.Price kr.</b>
                     </p>
                     <p class="text-muted">
                         <strong>HUSK: </strong>Skriv din e-mailadresse i beskedfeltet ved overførsel, så vi kan se det er dig, der har betalt.
@@ -223,22 +236,169 @@
         </div>
     </div>
 </section>
-
+<!-- #endregion -->
+<!-- #region konkurencer -->
 
 <section class="bg-dark" id="konkurrencer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
+            <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Konkurrencer</h2>
                 <hr class="light">
-                <p class="text-faded">Her kan du lære mere om hvilke konkurrencer der vil finde sted til JYLAN.</p>
-                <p class="text-faded">Tag kontakt til Tue hvis du har idéer.</p>
-                <i class="fa fa-4x fa-trophy wow bounceIn text-primary" data-wow-delay="1s"></i>
-                @*<a href="res/launchoptions.jpg"><img src="res/launchoptions.jpg" class="img-responsive" style="margin: 0 auto" alt="Video Settings:" /></a>*@
+            </div>
+            <div class="col-lg-8 col-lg-offset-2">
+                <p class="text-faded">Til Jylan vil vi forsøge at lave nogle turneringer i multiplayer-spil eller konkurrencer, fordelt ud på dagene. Tilmelding kommer til at foregå på dagen for turneringen.</p>
+                <div id="accordion">
+                    <p class="text-warning wow shake" data-wow-delay="1.5s">
+                        <a href="#">Jylan #5</a>
+                    </p>
+                    <div>
+                        <h3>Counter-Strike: Global Offensive (2on2)</h3>
+                        <div class="table-responsive">
+                            <table class="table" style="text-align: left;">
+                                <tr>
+                                    <th>
+                                        Placering
+                                    </th>
+                                    <th>
+                                        Præmie
+                                    </th>
+                                    <th>
+                                        Points
+                                    </th>
+                                    <th>
+                                        Spillere
+                                    </th>
+                                    <th>
+                                        Hold
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-2x fa-trophy" style="color: gold"></i> 1.
+                                    </td>
+                                    <td>
+                                        TBA
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-2x fa-trophy" style="color: silver"></i> 2.
+                                    </td>
+                                    <td>
+                                        TBA
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-2x fa-trophy" style="color: #ffcc99"></i> 3.
+                                    </td>
+                                    <td>
+                                        TBA
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <h4>Rocket League (2on2)</h4>
+                        <div class="table-responsive">
+                            <table class="table" style="text-align: left;">
+                                <tr>
+                                    <th>
+                                        Placering
+                                    </th>
+                                    <th>
+                                        Præmie
+                                    </th>
+                                    <th>
+                                        Points
+                                    </th>
+                                    <th>
+                                        Spillere
+                                    </th>
+                                    <th>
+                                        Hold
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-2x fa-trophy" style="color: gold"></i> 1.
+                                    </td>
+                                    <td>
+                                        TBA
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-2x fa-trophy" style="color: silver"></i> 2.
+                                    </td>
+                                    <td>
+                                        TBA
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-2x fa-trophy" style="color: #ffcc99"></i> 3.
+                                    </td>
+                                    <td>
+                                        TBA
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h3>
+                        <a href="#">Jylan #6</a>
+                    </h3>
+                    <div>
+                        <p>
+                            Konkurrencer for Jylan #6 er ikke annoncerede endnu.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- #endregion -->
+
+
+<!-- #region kontakt -->
 
 <section id="kontakt">
     <div class="container">
@@ -246,7 +406,7 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Kontakt</h2>
                 <hr class="primary">
-                <br/>
+                <br />
             </div>
             <div class="col-lg-6 text-center">
                 <h3 class="section-heading">Tue Runge Pedersen</h3>
@@ -259,7 +419,7 @@
                             <strong>Email</strong>
                         </td>
                         <td style="text-align: right;">
-                            <a href="mailto:tuerunge@gmail.com" target="_blank" class="zocial email">tuerunge@gmail.com</a><br/>
+                            <a href="mailto:tuerunge@gmail.com" target="_blank" class="zocial email">tuerunge@gmail.com</a><br />
                         </td>
                     </tr>
                     <tr>
@@ -268,7 +428,7 @@
                             <strong>Telefon</strong>
                         </td>
                         <td style="text-align: right;">
-                            <a href="tel:+4527822428" target="_blank" class="zocial call">+45 2782 2428</a><br/>
+                            <a href="tel:+4527822428" target="_blank" class="zocial call">+45 2782 2428</a><br />
                         </td>
                     </tr>
                     <tr>
@@ -281,7 +441,7 @@
                         </td>
                     </tr>
                 </table>
-                <br/>
+                <br />
             </div>
             <div class="col-lg-6 text-center">
                 <h3 class="section-heading">Asger Vestbjerg</h3>
@@ -294,7 +454,7 @@
                             <strong>Email</strong>
                         </td>
                         <td style="text-align: right;">
-                            <a href="mailto:asgerv@gmail.com" target="_blank" class="zocial email">asgerv@gmail.com</a><br/>
+                            <a href="mailto:asgerv@gmail.com" target="_blank" class="zocial email">asgerv@gmail.com</a><br />
                         </td>
                     </tr>
                     <tr>
@@ -303,12 +463,13 @@
                             <strong>Telefon</strong>
                         </td>
                         <td style="text-align: right;">
-                            <a href="tel:+4525537429" target="_blank" class="zocial call">+45 2553 7429</a><br/>
+                            <a href="tel:+4525537429" target="_blank" class="zocial call">+45 2553 7429</a><br />
                         </td>
                     </tr>
                 </table>
-                <br/>
+                <br />
             </div>
         </div>
     </div>
 </section>
+<!-- #endregion -->
