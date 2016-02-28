@@ -187,10 +187,10 @@
         <div class="row">
             <div class="col-md-6 text-center">
                 <div class="service-box">
-                    <i class="fa fa-4x fa-info-circle wow bounceIn text-primary" data-wow-delay=".5s" style="animation-delay: 0.5s; animation-name: bounceIn; visibility: visible;"></i>
+                    <i class="fa fa-4x fa-info-circle wow bounceIn text-primary text-center" data-wow-delay=".5s" style="animation-delay: 0.5s; animation-name: bounceIn; visibility: visible;"></i>
                     <p class="text-muted">
                     </p>
-                    <h3>Generelt</h3>
+                    <h3 class="text-center">Generelt</h3>
                     <p class="text-muted">Der vil være mulighed for benyttelse af køkkenfaciliteter, heriblandt køleskab, fryser, ovn, kogeplade og andet udstyr. Der er også mulighed for madlevering.</p>
                     <br><strong>Medbring:</strong><br>
                     <p class="text-muted">
@@ -207,9 +207,9 @@
             <div class="col-md-6 text-center">
                 <div class="service-box">
                     <i class="fa fa-4x fa-dollar wow bounceIn text-primary" data-wow-delay="1s" style="animation-delay: 1s; animation-name: bounceIn; visibility: visible;"></i>
-                    <h3>Betaling</h3>
+                    <h3 class="text-center">Betaling</h3>
                     <p class="text-muted">
-                        <b>Pris: kr.</b>
+                        <b>Pris: @Model.Price kr.</b>
                     </p>
                     <p class="text-muted">
                         <strong>HUSK: </strong>Skriv din e-mailadresse i beskedfeltet ved overførsel, så vi kan se det er dig, der har betalt.
@@ -248,16 +248,14 @@
             </div>
             <div class="col-lg-8 col-lg-offset-2">
                 <p class="text-faded">Til Jylan vil vi forsøge at lave nogle turneringer i multiplayer-spil eller konkurrencer, fordelt ud på dagene. Tilmelding kommer til at foregå på dagen for turneringen.</p>
-                <i class="fa fa-4x fa-trophy wow bounceIn text-primary" data-wow-delay="1s"></i>
                 <div id="accordion">
-                    <h3 class="wow shake" data-wow-delay="1.5s">
+                    <p class="text-warning wow shake" data-wow-delay="1.5s">
                         <a href="#">Jylan #5</a>
-                    </h3>
+                    </p>
                     <div>
-                        <h4>Counter-Strike: Global Offensive</h4>
+                        <h3>Counter-Strike: Global Offensive (2on2)</h3>
                         <div class="table-responsive">
                             <table class="table" style="text-align: left;">
-
                                 <tr>
                                     <th>
                                         Placering
@@ -269,28 +267,117 @@
                                         Points
                                     </th>
                                     <th>
-                                        Players
+                                        Spillere
                                     </th>
                                     <th>
-                                        Team
+                                        Hold
                                     </th>
                                 </tr>
                                 <tr>
                                     <td>
-                                        kasd
+                                        <i class="fa fa-2x fa-trophy" style="color: gold"></i> 1.
                                     </td>
                                     <td>
-                                        asd
+                                        TBA
                                     </td>
                                     <td>
-                                        asdsad
+                                        
                                     </td>
                                     <td>
-                                        asd
+                                        
                                     </td>
                                     <td>
-                                        asd
+                                        
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-2x fa-trophy" style="color: silver"></i> 2.
+                                    </td>
+                                    <td>
+                                        TBA
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-2x fa-trophy" style="color: #ffcc99"></i> 3.
+                                    </td>
+                                    <td>
+                                        TBA
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <h4>Rocket League (2on2)</h4>
+                        <div class="table-responsive">
+                            <table class="table" style="text-align: left;">
+                                <tr>
+                                    <th>
+                                        Placering
+                                    </th>
+                                    <th>
+                                        Præmie
+                                    </th>
+                                    <th>
+                                        Points
+                                    </th>
+                                    <th>
+                                        Spillere
+                                    </th>
+                                    <th>
+                                        Hold
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-2x fa-trophy" style="color: gold"></i> 1.
+                                    </td>
+                                    <td>
+                                        TBA
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-2x fa-trophy" style="color: silver"></i> 2.
+                                    </td>
+                                    <td>
+                                        TBA
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-2x fa-trophy" style="color: #ffcc99"></i> 3.
+                                    </td>
+                                    <td>
+                                        TBA
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </table>
                         </div>
@@ -300,11 +387,7 @@
                     </h3>
                     <div>
                         <p>
-                            Unlike CSS 2, which is a large single specification defining various features,
-                            CSS 3 is divided into several separate documents called "modules". Each module
-                            adds new capabilities or extends features defined in CSS 2, over preserving backward
-                            compatibility. <em><strong>Source:</strong> <a href="http://en.wikipedia.org/wiki/Css">WikiPedia.org</a></em>
-
+                            Konkurrencer for Jylan #6 er ikke annoncerede endnu.
                         </p>
                     </div>
                 </div>
