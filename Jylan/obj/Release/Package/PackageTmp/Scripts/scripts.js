@@ -1,4 +1,4 @@
-﻿$("#clock").countdown($("#eventstartdate").val(), function(event) {
+﻿$("#clock").countdown($("#eventstartdate").val(), function (event) {
     var $this = $(this).html(event.strftime(""
         + "<span>%D</span> dage, "
         + "<span>%H</span> timer, "
@@ -6,7 +6,7 @@
         + "<span>%S</span> sekunder"));
 });
 
-$(function() {
+$(function () {
     $(".datepick").datetimepicker({
         showWeek: true,
         firstDay: 1,
@@ -18,7 +18,7 @@ $(function() {
     });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     var time = $("#timeleft").val();
     $("#counter").countdown({
         startTime: time,
@@ -27,7 +27,7 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     initialize();
 });
 
@@ -47,3 +47,10 @@ function initialize() {
         title: "JYLAN @ Lintrup Aktivitetscenter"
     });
 }
+
+$(function () {
+    $("#accordion").accordion({
+        heightStyle: "content",
+        collapsible: true
+    });
+});
