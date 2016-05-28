@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web.Mvc;
 using Jylan.Models;
@@ -13,21 +14,9 @@ namespace Jylan.Controllers
 
         public ActionResult Index()
         {
-            //var landingPageViewModel = db.Signups.ToLandingPageViewModel(db.Events.ToList().LastOrDefault());
-            var currentEvent = from e in db.Events
-                orderby e.StartDateTime
-                select e;
-            var testEvent = new Event
-            {
-                StartDateTime = DateTime.Now.AddDays(-5),
-                EndDateTime = DateTime.Now.AddDays(-2),
-                MaxSignups = 100,
-                Name = "Jylan #5",
-                Signups = new List<Signup>()
-            };
-
-            //return View(currentEvent.FirstOrDefault());
-            return View(db.Events.OrderBy(e => e.StartDateTime).FirstOrDefault());
+            // Get latest event
+            var currentEvent = db.Events.OrderByDescending(e => e.StartDateTime).FirstOrDefault();
+            return View(currentEvent);
         }
 
         [Route("Information")]
