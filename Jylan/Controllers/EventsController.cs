@@ -14,7 +14,7 @@ namespace Jylan.Controllers
         [Route("AdminPanel")]
         public ActionResult Index()
         {
-            return View(db.Events.ToList());
+            return View(db.Events.OrderByDescending(e => e.StartDateTime).ToList());
         }
 
         [HttpPost]

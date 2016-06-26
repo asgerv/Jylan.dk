@@ -53,7 +53,7 @@ namespace Jylan.Controllers
         {
             if (ModelState.IsValid)
             {
-                var currentEvent = db.Events.OrderBy(e => e.StartDateTime).FirstOrDefault();
+                var currentEvent = db.Events.OrderByDescending(e => e.StartDateTime).FirstOrDefault();
                 currentEvent.Signups.Add(signup);
                 db.SaveChanges();
                 var client = new SmtpClient();
@@ -86,7 +86,7 @@ namespace Jylan.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var currentEvent = db.Events.OrderBy(e => e.StartDateTime).FirstOrDefault();
+            var currentEvent = db.Events.OrderByDescending(e => e.StartDateTime).FirstOrDefault();
             if (currentEvent == null)
             {
                 return HttpNotFound();
@@ -127,7 +127,7 @@ namespace Jylan.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var currentEvent = db.Events.OrderBy(e => e.StartDateTime).FirstOrDefault();
+            var currentEvent = db.Events.OrderByDescending(e => e.StartDateTime).FirstOrDefault();
             if (currentEvent == null)
                 return HttpNotFound();
             var signup = currentEvent.Signups.FirstOrDefault(s => s.SignupId == id);
@@ -145,7 +145,7 @@ namespace Jylan.Controllers
         [Route("Tilmeldinger/Slet/{id:int}")]
         public ActionResult DeleteConfirmed(int id)
         {
-            var currentEvent = db.Events.OrderBy(e => e.StartDateTime).FirstOrDefault();
+            var currentEvent = db.Events.OrderByDescending(e => e.StartDateTime).FirstOrDefault();
             var signup = currentEvent.Signups.FirstOrDefault(s => s.SignupId == id);
             currentEvent.Signups.Remove(signup);
             db.SaveChanges();
@@ -155,7 +155,7 @@ namespace Jylan.Controllers
         // Custom control for custom view
         public ActionResult SignupComplete(Signup signup)
         {
-            var currentEvent = db.Events.OrderBy(e => e.StartDateTime).FirstOrDefault();
+            var currentEvent = db.Events.OrderByDescending(e => e.StartDateTime).FirstOrDefault();
             ViewBag.EventPrice = 0;
             if (currentEvent != null) ViewBag.EventPrice = currentEvent.Price;
             return View(signup);

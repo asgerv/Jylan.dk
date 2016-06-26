@@ -29,7 +29,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/28/2016 23:27:58</publishTime>
     </File>
     <File Include="bin/Jylan.dll">
-      <publishTime>05/28/2016 17:58:59</publishTime>
+      <publishTime>06/27/2016 01:09:44</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>02/28/2016 23:27:59</publishTime>
